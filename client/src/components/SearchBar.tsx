@@ -1,0 +1,97 @@
+import { useState, useEffect, useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useLocation } from "wouter";
+import { Search } from "lucide-react";
+import { City } from "@shared/types";
+
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showResults, setShowResults] = useState(false);
+  const [, setLocation] = useLocation();
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const { data: cities } = useQuery<City[]>({
+    queryKey: ["/api/cities"],
+  });
+
+  const filteredCities = cities?.filter(city => 
+    city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    city.state.toLowerCase().includes(searchTerm.toLowerCase())
+  ).slice(0, 5) || [];
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setShowResults(e.target.value.length > 0);
+  };
+
+  const handleCitySelect = (cityName: string) => {
+    setSearchTerm("");
+    setShowResults(false);
+    setLocation(`/city/${encodeURIComponent(cityName)}`);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowResults(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="bg-primary py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-white text-center mb-4">
+            Find senior living options in over 1,000 U.S. cities
+          </p>
+          <div className="relative" ref={searchRef}>
+            <div className="flex items-center bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="px-3 py-2">
+                <Search className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search city or zip code..."
+                className="py-2 flex-1 focus:outline-none"
+                value={searchTerm}
+                onChange={handleSearch}
+                onFocus={() => setShowResults(searchTerm.length > 0)}
+              />
+              <button className="bg-accent text-white px-5 py-2 font-medium hover:bg-amber-600 transition">
+                Search
+              </button>
+            </div>
+            {showResults && (
+              <div className="absolute w-full bg-white mt-1 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                <div className="p-2">
+                  {filteredCities.length > 0 ? (
+                    filteredCities.map((city) => (
+                      <div
+                        key={`${city.name}-${city.state}`}
+                        className="cursor-pointer p-2 hover:bg-gray-100 rounded"
+                        onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
+                      >
+                        {city.name}, {city.state}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="p-2 text-gray-500">No cities found</div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SearchBar;
