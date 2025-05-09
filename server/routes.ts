@@ -164,18 +164,19 @@ async function initializeData() {
     // Check if we've already loaded the cities
     const cities = await storage.getAllCities();
     
-    // Forcing regeneration for testing
-    if (cities.length < 100) {
+    // Always regenerate for this session
+    if (true) {
       console.log('Initializing cities and facilities data...');
       
       // Process the CSV file and generate city data
       const csvPath = path.join(process.cwd(), 'data', 'cities.csv');
       
+      // Always regenerate the cities.csv file from the uploaded CSV
+      console.log('Regenerating cities data from uploaded CSV...');
       try {
-        await fs.access(csvPath);
-      } catch (error) {
-        console.log('Cities CSV not found, generating sample data...');
         await processAndSaveCitiesData();
+      } catch (error) {
+        console.error('Error processing cities data:', error);
       }
       
       // Read and process the CSV file
