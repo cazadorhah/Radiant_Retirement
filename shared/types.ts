@@ -9,8 +9,8 @@ export interface City {
   name: string;
   state: string;
   population: number;
-  stateName?: string;
-  slug?: string;
+  stateName: string | null;
+  slug: string | null;
 }
 
 export interface Facility {

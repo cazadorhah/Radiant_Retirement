@@ -67,7 +67,12 @@ export class MemStorage implements IStorage {
   
   async createCity(cityData: InsertCity): Promise<City> {
     const id = this.cityId++;
-    const city: City = { ...cityData, id };
+    const city: City = { 
+      ...cityData, 
+      id,
+      stateName: cityData.stateName || null,
+      slug: cityData.slug || null 
+    };
     this.cities.set(id, city);
     return city;
   }

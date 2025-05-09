@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link, useParams } from "wouter";
+import { useParams, useLocation } from "wouter";
 import { City } from "@shared/types";
 import SearchBar from "@/components/SearchBar";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRightCircle, Building, MapPin, Pin, Loader2 } from "lucide-react";
+import { ArrowRightCircle, Building, MapPin, Loader2 } from "lucide-react";
+import HomeLink from "@/components/HomeLink";
 
 const stateFullNames: Record<string, string> = {
   'AL': 'Alabama',
@@ -68,12 +69,15 @@ const getStateFullName = (stateCode: string): string => {
 
 const BrowsePage = () => {
   const [selectedState, setSelectedState] = useState<string | null>(null);
-  const { stateCode } = useParams();
+  const params = useParams<{ stateCode: string }>();
+  const [, setLocation] = useLocation();
   
-  // If stateCode is in the URL, set it as the selected state
-  if (stateCode && !selectedState && stateCode !== selectedState) {
-    setSelectedState(stateCode);
-  }
+  // Set selected state based on URL params when component mounts or params change
+  useEffect(() => {
+    if (params.stateCode && params.stateCode !== selectedState) {
+      setSelectedState(params.stateCode);
+    }
+  }, [params.stateCode, selectedState]);
 
   // Fetch all states
   const { data: states, isLoading: isLoadingStates } = useQuery<string[]>({
@@ -87,6 +91,11 @@ const BrowsePage = () => {
     enabled: !!selectedState,
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
+
+  const handleBackToStates = () => {
+    setSelectedState(null);
+    setLocation('/browse');
+  };
 
   return (
     <>
@@ -136,17 +145,19 @@ const BrowsePage = () => {
               {!selectedState && (
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                   {states?.map((state) => (
-                    <Link key={state} href={`/browse/${state}`}>
-                      <a className="block">
-                        <Card className="hover:shadow-md transition cursor-pointer h-full">
-                          <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
-                            <MapPin className="h-8 w-8 text-primary mb-2" />
-                            <h2 className="font-semibold text-lg">{getStateFullName(state)}</h2>
-                            <p className="text-sm text-gray-500 mt-1">{state}</p>
-                          </CardContent>
-                        </Card>
-                      </a>
-                    </Link>
+                    <HomeLink 
+                      key={state} 
+                      href={`/browse/${state}`}
+                      className="block"
+                    >
+                      <Card className="hover:shadow-md transition cursor-pointer h-full">
+                        <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                          <MapPin className="h-8 w-8 text-primary mb-2" />
+                          <h2 className="font-semibold text-lg">{getStateFullName(state)}</h2>
+                          <p className="text-sm text-gray-500 mt-1">{state}</p>
+                        </CardContent>
+                      </Card>
+                    </HomeLink>
                   ))}
                 </div>
               )}
@@ -156,7 +167,7 @@ const BrowsePage = () => {
                   <div className="mb-8">
                     <Button
                       variant="outline"
-                      onClick={() => setSelectedState(null)}
+                      onClick={handleBackToStates}
                       className="flex items-center gap-2"
                     >
                       <ArrowRightCircle className="h-4 w-4 rotate-180" />
@@ -168,36 +179,39 @@ const BrowsePage = () => {
                     <div className="flex justify-center py-12">
                       <Loader2 className="h-12 w-12 animate-spin text-primary" />
                     </div>
-                  ) : (
+                  ) : cities && cities.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {cities?.map((city) => (
-                        <Link
+                      {cities.map((city) => (
+                        <HomeLink
                           key={`${city.name}-${city.state}`}
                           href={`/city/${encodeURIComponent(`${city.name}-${city.state}`)}`}
+                          className="block"
                         >
-                          <a className="block">
-                            <Card className="hover:shadow-md transition cursor-pointer h-full">
-                              <CardHeader className="pb-2">
-                                <CardTitle>{city.name}</CardTitle>
-                              </CardHeader>
-                              <CardContent>
-                                <p className="text-gray-600 mb-4">
-                                  Population: {city.population.toLocaleString()}
-                                </p>
-                                <p className="text-gray-700 mb-4">
-                                  Explore senior living options in {city.name}, {city.state}.
-                                </p>
-                                <div className="flex gap-4 text-sm">
-                                  <div className="flex items-center">
-                                    <Building className="h-4 w-4 text-primary mr-1" />
-                                    <span>5 Facilities</span>
-                                  </div>
+                          <Card className="hover:shadow-md transition cursor-pointer h-full">
+                            <CardHeader className="pb-2">
+                              <CardTitle>{city.name}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              <p className="text-gray-600 mb-4">
+                                Population: {city.population.toLocaleString()}
+                              </p>
+                              <p className="text-gray-700 mb-4">
+                                Explore senior living options in {city.name}, {city.state}.
+                              </p>
+                              <div className="flex gap-4 text-sm">
+                                <div className="flex items-center">
+                                  <Building className="h-4 w-4 text-primary mr-1" />
+                                  <span>5 Facilities</span>
                                 </div>
-                              </CardContent>
-                            </Card>
-                          </a>
-                        </Link>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </HomeLink>
                       ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8">
+                      <p className="text-lg text-gray-600">No cities found for {getStateFullName(selectedState)}.</p>
                     </div>
                   )}
                 </>

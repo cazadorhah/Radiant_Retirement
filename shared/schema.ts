@@ -37,16 +37,12 @@ export const insertUserSchema = createInsertSchema(users).pick({
   password: true,
 });
 
-export const insertCitySchema = createInsertSchema(cities).extend({
-  stateName: z.string().optional(),
-  slug: z.string().optional(),
-}).pick({
-  name: true,
-  state: true,
-  population: true,
-  stateName: true,
-  slug: true,
-});
+export const insertCitySchema = createInsertSchema(cities)
+  .omit({ id: true })
+  .extend({
+    stateName: z.string().nullable(),
+    slug: z.string().nullable(),
+  });
 
 export const insertFacilitySchema = createInsertSchema(facilities);
 

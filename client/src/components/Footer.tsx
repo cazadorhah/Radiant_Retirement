@@ -50,6 +50,16 @@ const Footer = () => {
             </ul>
           </div>
           <div>
+            <h3 className="text-lg font-semibold mb-4">Browse States</h3>
+            <ul className="space-y-2">
+              <li><Link href="/browse/CA" className="text-gray-300 hover:text-white">California</Link></li>
+              <li><Link href="/browse/FL" className="text-gray-300 hover:text-white">Florida</Link></li>
+              <li><Link href="/browse/TX" className="text-gray-300 hover:text-white">Texas</Link></li>
+              <li><Link href="/browse/NY" className="text-gray-300 hover:text-white">New York</Link></li>
+              <li><Link href="/browse" className="text-gray-300 hover:text-white">All States</Link></li>
+            </ul>
+          </div>
+          <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li className="flex items-start">

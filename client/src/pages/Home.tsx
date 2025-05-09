@@ -121,9 +121,11 @@ const Home = () => {
           )}
 
           <div className="mt-12 text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white font-medium">
-              View All Cities
-            </Button>
+            <Link href="/browse">
+              <Button className="bg-primary hover:bg-primary/90 text-white font-medium">
+                Browse All Cities by State
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
