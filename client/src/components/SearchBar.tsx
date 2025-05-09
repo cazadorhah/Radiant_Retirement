@@ -14,10 +14,12 @@ const SearchBar = () => {
     queryKey: ["/api/cities"],
   });
 
-  const filteredCities = cities?.filter(city => 
-    city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    city.state.toLowerCase().includes(searchTerm.toLowerCase())
-  ).slice(0, 5) || [];
+  const filteredCities = cities?.filter(city => {
+    const searchTermLower = searchTerm.toLowerCase();
+    return city.name.toLowerCase().includes(searchTermLower) ||
+           city.state.toLowerCase().includes(searchTermLower) ||
+           (city.stateName?.toLowerCase() || '').includes(searchTermLower);
+  }).slice(0, 10) || [];
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -78,7 +80,10 @@ const SearchBar = () => {
                         className="cursor-pointer p-2 hover:bg-gray-100 rounded"
                         onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
                       >
-                        {city.name}, {city.state}
+                        <div className="flex justify-between">
+                          <span>{city.name}, {city.state}</span>
+                          {city.stateName && <span className="text-gray-500 text-sm">{city.stateName}</span>}
+                        </div>
                       </div>
                     ))
                   ) : (
