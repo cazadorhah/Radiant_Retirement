@@ -164,7 +164,8 @@ async function initializeData() {
     // Check if we've already loaded the cities
     const cities = await storage.getAllCities();
     
-    if (cities.length === 0) {
+    // Forcing regeneration for testing
+    if (cities.length < 100) {
       console.log('Initializing cities and facilities data...');
       
       // Process the CSV file and generate city data

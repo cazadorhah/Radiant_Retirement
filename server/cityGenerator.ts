@@ -116,12 +116,20 @@ export async function processAndSaveCitiesData() {
         createReadStream(providedCsvPath)
           .pipe(csv())
           .on('data', (data) => {
+            // Handle both formats
+            // Some CSV files might have 'state' directly, others might have 'state_name'
+            const stateName = data.state_name;
+            const stateCode = data.state || getStateAbbreviation(stateName);
+            const cityName = data.city;
+            const population = parseInt((data.population || '0').replace(/,/g, ''), 10);
+            const slug = data.slug || `${cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${stateCode.toLowerCase()}`;
+            
             cities.push({
-              city: data.city,
-              state: getStateAbbreviation(data.state_name),
-              state_name: data.state_name,
-              population: parseInt(data.population.replace(/,/g, ''), 10),
-              slug: data.slug
+              city: cityName,
+              state: stateCode,
+              state_name: stateName,
+              population: population,
+              slug: slug
             });
           })
           .on('end', async () => {

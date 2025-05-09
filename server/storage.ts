@@ -24,14 +24,18 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private cities: Map<number, City>;
+  private cityNameMap: Map<string, City>; // Map city name + state to City object
   private facilities: Map<string, Facility>;
+  private facilitiesByCity: Map<string, Facility[]>; // Map city+state to facilities
   currentId: number;
   cityId: number;
 
   constructor() {
     this.users = new Map();
     this.cities = new Map();
+    this.cityNameMap = new Map(); // For fast lookups by name+state
     this.facilities = new Map();
+    this.facilitiesByCity = new Map(); // For fast facility lookups by city
     this.currentId = 1;
     this.cityId = 1;
   }
@@ -60,26 +64,38 @@ export class MemStorage implements IStorage {
   }
   
   async getCityByNameAndState(name: string, state: string): Promise<City | undefined> {
-    return Array.from(this.cities.values()).find(
-      (city) => city.name === name && city.state === state
-    );
+    // Use the cityNameMap for faster lookups
+    const key = `${name.toLowerCase()}|${state.toLowerCase()}`;
+    return this.cityNameMap.get(key);
   }
   
   async createCity(cityData: InsertCity): Promise<City> {
+    // Check if city already exists to prevent duplicates
+    const existingCity = await this.getCityByNameAndState(cityData.name, cityData.state);
+    if (existingCity) {
+      return existingCity;
+    }
+    
     const id = this.cityId++;
     const city: City = { 
       ...cityData, 
       id,
       stateName: cityData.stateName || null,
-      slug: cityData.slug || null 
+      slug: cityData.slug || `${cityData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${cityData.state.toLowerCase()}` 
     };
+    
+    // Store city in both maps
     this.cities.set(id, city);
+    const nameKey = `${city.name.toLowerCase()}|${city.state.toLowerCase()}`;
+    this.cityNameMap.set(nameKey, city);
+    
     return city;
   }
   
   async getCitiesByState(state: string): Promise<City[]> {
+    // Optimizing this would require a stateMap index, but for now we'll filter
     return Array.from(this.cities.values()).filter(
-      (city) => city.state === state
+      (city) => city.state.toLowerCase() === state.toLowerCase()
     );
   }
   
@@ -93,13 +109,34 @@ export class MemStorage implements IStorage {
   
   // Facility methods
   async getFacilitiesByCity(cityName: string, stateName: string): Promise<Facility[]> {
+    // Check the facilities by city map first
+    const key = `${cityName.toLowerCase()}|${stateName.toLowerCase()}`;
+    const facilities = this.facilitiesByCity.get(key);
+    
+    if (facilities) {
+      return facilities;
+    }
+    
+    // If not found, fall back to filtering all facilities
     return Array.from(this.facilities.values()).filter(
-      (facility) => facility.city === cityName && facility.state === stateName
+      (facility) => facility.city.toLowerCase() === cityName.toLowerCase() && 
+                  facility.state.toLowerCase() === stateName.toLowerCase()
     );
   }
   
   async createFacility(facility: Facility): Promise<Facility> {
     this.facilities.set(facility.id, facility);
+    
+    // Add to facilitiesByCity map for faster lookups
+    const key = `${facility.city.toLowerCase()}|${facility.state.toLowerCase()}`;
+    if (!this.facilitiesByCity.has(key)) {
+      this.facilitiesByCity.set(key, []);
+    }
+    
+    const cityFacilities = this.facilitiesByCity.get(key) || [];
+    cityFacilities.push(facility);
+    this.facilitiesByCity.set(key, cityFacilities);
+    
     return facility;
   }
 }
