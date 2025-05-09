@@ -59,7 +59,7 @@ const stateAbbreviations = {
 };
 
 // Function to get state abbreviation from full name
-const getStateAbbreviation = (stateName: string): string => {
+export const getStateAbbreviation = (stateName: string): string => {
   const entries = Object.entries(stateAbbreviations);
   const match = entries.find(([_, name]) => name === stateName);
   return match ? match[0] : stateName.substring(0, 2).toUpperCase();
@@ -78,6 +78,26 @@ export async function processAndSaveCitiesData() {
     // Check if the user-provided CSV file exists
     const providedCsvPath = path.join(process.cwd(), 'attached_assets', 'top_1000_cities.csv');
     const destinationCsvPath = path.join(dataDir, 'cities.csv');
+    
+    // First, check if a CSV file already exists in the data directory
+    try {
+      await fs.access(destinationCsvPath);
+      console.log('Cities CSV file already exists, checking if it needs to be updated');
+      
+      // Read the first line to check if it contains state_name and slug
+      const existingContent = await fs.readFile(destinationCsvPath, 'utf8');
+      const headerLine = existingContent.split('\n')[0];
+      
+      if (headerLine.includes('state_name') && headerLine.includes('slug')) {
+        console.log('Cities CSV file is already in the right format');
+        return destinationCsvPath;
+      } else {
+        console.log('Cities CSV file needs to be updated with new format');
+        // Continue to recreate the file
+      }
+    } catch (error) {
+      console.log('No existing cities CSV file found, creating one');
+    }
     
     try {
       await fs.access(providedCsvPath);

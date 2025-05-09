@@ -6,8 +6,69 @@ import * as path from 'path';
 import csv from 'csv-parser';
 import { createReadStream } from 'fs';
 import { generateFacilities } from './facilityGenerator';
-import { processAndSaveCitiesData } from './cityGenerator';
+import { processAndSaveCitiesData, getStateAbbreviation } from './cityGenerator';
 import { City, InsertCity } from "@shared/schema";
+
+// State abbreviation mapping
+const stateAbbreviations: Record<string, string> = {
+  'Alabama': 'AL',
+  'Alaska': 'AK',
+  'Arizona': 'AZ',
+  'Arkansas': 'AR',
+  'California': 'CA',
+  'Colorado': 'CO',
+  'Connecticut': 'CT',
+  'Delaware': 'DE',
+  'Florida': 'FL',
+  'Georgia': 'GA',
+  'Hawaii': 'HI',
+  'Idaho': 'ID',
+  'Illinois': 'IL',
+  'Indiana': 'IN',
+  'Iowa': 'IA',
+  'Kansas': 'KS',
+  'Kentucky': 'KY',
+  'Louisiana': 'LA',
+  'Maine': 'ME',
+  'Maryland': 'MD',
+  'Massachusetts': 'MA',
+  'Michigan': 'MI',
+  'Minnesota': 'MN',
+  'Mississippi': 'MS',
+  'Missouri': 'MO',
+  'Montana': 'MT',
+  'Nebraska': 'NE',
+  'Nevada': 'NV',
+  'New Hampshire': 'NH',
+  'New Jersey': 'NJ',
+  'New Mexico': 'NM',
+  'New York': 'NY',
+  'North Carolina': 'NC',
+  'North Dakota': 'ND',
+  'Ohio': 'OH',
+  'Oklahoma': 'OK',
+  'Oregon': 'OR',
+  'Pennsylvania': 'PA',
+  'Rhode Island': 'RI',
+  'South Carolina': 'SC',
+  'South Dakota': 'SD',
+  'Tennessee': 'TN',
+  'Texas': 'TX',
+  'Utah': 'UT',
+  'Vermont': 'VT',
+  'Virginia': 'VA',
+  'Washington': 'WA',
+  'West Virginia': 'WV',
+  'Wisconsin': 'WI',
+  'Wyoming': 'WY',
+  'District of Columbia': 'DC'
+};
+
+// Helper function to get state abbreviation from full name
+function getStateAbbreviationFromName(stateName: string | undefined): string {
+  if (!stateName) return '';
+  return stateAbbreviations[stateName] || stateName.substring(0, 2).toUpperCase();
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize the city data when the server starts
@@ -123,13 +184,18 @@ async function initializeData() {
         createReadStream(csvPath)
           .pipe(csv())
           .on('data', (data) => {
-            citiesArray.push({
-              name: data.city,
-              state: data.state,
-              population: parseInt(data.population.replace(/,/g, ''), 10),
-              stateName: data.state_name || '',
-              slug: data.slug || `${data.city.toLowerCase().replace(/ /g, '-')}-${data.state.toLowerCase()}`
-            });
+            // Check if we have all the expected fields
+            if (data.city && data.state) {
+              // Handle both file formats (with or without state_name and slug)
+              const cityData: InsertCity = {
+                name: data.city,
+                state: data.state || getStateAbbreviationFromName(data.state_name),
+                population: parseInt(data.population?.replace(/,/g, '') || '0', 10),
+                stateName: data.state_name || null,
+                slug: data.slug || `${data.city.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${(data.state || '').toLowerCase()}`
+              };
+              citiesArray.push(cityData);
+            }
           })
           .on('end', async () => {
             console.log(`Loaded ${citiesArray.length} cities from CSV`);
@@ -138,20 +204,25 @@ async function initializeData() {
               // Store cities in memory
               let completedCities = 0;
               const totalCities = citiesArray.length;
+              const batchSize = 50; // Process cities in batches to improve performance
               
-              for (const city of citiesArray) {
-                await storage.createCity(city);
+              // Process cities in batches
+              for (let i = 0; i < totalCities; i += batchSize) {
+                const batch = citiesArray.slice(i, i + batchSize);
                 
-                // Generate facilities for each city
-                const facilities = generateFacilities(city.name, city.state);
-                for (const facility of facilities) {
-                  await storage.createFacility(facility);
-                }
+                // Process each city in the batch
+                await Promise.all(batch.map(async (city) => {
+                  const createdCity = await storage.createCity(city);
+                  
+                  // Generate facilities for each city
+                  const facilities = generateFacilities(city.name, city.state);
+                  await Promise.all(facilities.map(facility => storage.createFacility(facility)));
+                  
+                  return createdCity;
+                }));
                 
-                completedCities++;
-                if (completedCities % 100 === 0 || completedCities === totalCities) {
-                  console.log(`Processed ${completedCities}/${totalCities} cities`);
-                }
+                completedCities += batch.length;
+                console.log(`Processed ${completedCities}/${totalCities} cities`);
               }
               
               console.log('Finished loading cities and generating facilities');
