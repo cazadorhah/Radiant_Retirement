@@ -3,9 +3,10 @@ import { Building, MapPin, Phone, Globe } from "lucide-react";
 
 interface StarRatingProps {
   rating: number;
+  reviewCount: number;
 }
 
-const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
+const StarRating: React.FC<StarRatingProps> = ({ rating, reviewCount }) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
@@ -20,7 +21,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
         <i key={`empty-${i}`} className="far fa-star"></i>
       ))}
       <span className="ml-1 text-gray-600">
-        {rating.toFixed(1)} ({facility.reviewCount} reviews)
+        {rating.toFixed(1)} ({reviewCount} reviews)
       </span>
     </div>
   );
@@ -50,7 +51,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ facility, featured = false 
         <div className="p-6 md:w-2/3">
           <div className="flex justify-between items-start">
             <h3 className="text-xl font-bold text-gray-900">{facility.name}</h3>
-            <StarRating rating={facility.rating} />
+            <StarRating rating={facility.rating} reviewCount={facility.reviewCount} />
           </div>
           <p className="text-gray-600 mt-2">
             <MapPin className="h-4 w-4 inline text-primary mr-2" />
