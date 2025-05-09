@@ -2,11 +2,20 @@ import { pgTable, text, serial, integer, real } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+// User schema for authentication (if needed later)
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
+});
+
 export const cities = pgTable("cities", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   state: text("state").notNull(),
   population: integer("population").notNull(),
+  stateName: text("state_name"),
+  slug: text("slug"),
 });
 
 export const facilities = pgTable("facilities", {
@@ -23,14 +32,26 @@ export const facilities = pgTable("facilities", {
   imageUrl: text("image_url").notNull(),
 });
 
-export const insertCitySchema = createInsertSchema(cities).pick({
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true,
+});
+
+export const insertCitySchema = createInsertSchema(cities).extend({
+  stateName: z.string().optional(),
+  slug: z.string().optional(),
+}).pick({
   name: true,
   state: true,
   population: true,
+  stateName: true,
+  slug: true,
 });
 
 export const insertFacilitySchema = createInsertSchema(facilities);
 
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type User = typeof users.$inferSelect;
 export type InsertCity = z.infer<typeof insertCitySchema>;
 export type City = typeof cities.$inferSelect;
 export type Facility = typeof facilities.$inferSelect;

@@ -1,8 +1,16 @@
+export interface User {
+  id: number;
+  username: string;
+  password: string;
+}
+
 export interface City {
   id: number;
   name: string;
   state: string;
   population: number;
+  stateName?: string;
+  slug?: string;
 }
 
 export interface Facility {

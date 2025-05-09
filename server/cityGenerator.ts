@@ -1,106 +1,68 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { createReadStream } from 'fs';
+import csv from 'csv-parser';
 
-const sampleCities = [
-  { city: 'New York', state: 'NY', population: '8,804,190' },
-  { city: 'Los Angeles', state: 'CA', population: '3,898,747' },
-  { city: 'Chicago', state: 'IL', population: '2,746,388' },
-  { city: 'Houston', state: 'TX', population: '2,304,580' },
-  { city: 'Phoenix', state: 'AZ', population: '1,608,139' },
-  { city: 'Philadelphia', state: 'PA', population: '1,603,797' },
-  { city: 'San Antonio', state: 'TX', population: '1,434,625' },
-  { city: 'San Diego', state: 'CA', population: '1,386,932' },
-  { city: 'Dallas', state: 'TX', population: '1,304,379' },
-  { city: 'San Jose', state: 'CA', population: '1,013,240' },
-  { city: 'Austin', state: 'TX', population: '961,855' },
-  { city: 'Jacksonville', state: 'FL', population: '949,611' },
-  { city: 'Fort Worth', state: 'TX', population: '918,915' },
-  { city: 'Columbus', state: 'OH', population: '905,748' },
-  { city: 'San Francisco', state: 'CA', population: '873,965' },
-  { city: 'Charlotte', state: 'NC', population: '874,579' },
-  { city: 'Indianapolis', state: 'IN', population: '887,642' },
-  { city: 'Seattle', state: 'WA', population: '737,015' },
-  { city: 'Denver', state: 'CO', population: '715,522' },
-  { city: 'Washington', state: 'DC', population: '689,545' }
-];
+// Map of state abbreviations to full state names
+const stateAbbreviations = {
+  'AL': 'Alabama',
+  'AK': 'Alaska',
+  'AZ': 'Arizona',
+  'AR': 'Arkansas',
+  'CA': 'California',
+  'CO': 'Colorado',
+  'CT': 'Connecticut',
+  'DE': 'Delaware',
+  'FL': 'Florida',
+  'GA': 'Georgia',
+  'HI': 'Hawaii',
+  'ID': 'Idaho',
+  'IL': 'Illinois',
+  'IN': 'Indiana',
+  'IA': 'Iowa',
+  'KS': 'Kansas',
+  'KY': 'Kentucky',
+  'LA': 'Louisiana',
+  'ME': 'Maine',
+  'MD': 'Maryland',
+  'MA': 'Massachusetts',
+  'MI': 'Michigan',
+  'MN': 'Minnesota',
+  'MS': 'Mississippi',
+  'MO': 'Missouri',
+  'MT': 'Montana',
+  'NE': 'Nebraska',
+  'NV': 'Nevada',
+  'NH': 'New Hampshire',
+  'NJ': 'New Jersey',
+  'NM': 'New Mexico',
+  'NY': 'New York',
+  'NC': 'North Carolina',
+  'ND': 'North Dakota',
+  'OH': 'Ohio',
+  'OK': 'Oklahoma',
+  'OR': 'Oregon',
+  'PA': 'Pennsylvania',
+  'RI': 'Rhode Island',
+  'SC': 'South Carolina',
+  'SD': 'South Dakota',
+  'TN': 'Tennessee',
+  'TX': 'Texas',
+  'UT': 'Utah',
+  'VT': 'Vermont',
+  'VA': 'Virginia',
+  'WA': 'Washington',
+  'WV': 'West Virginia',
+  'WI': 'Wisconsin',
+  'WY': 'Wyoming',
+  'DC': 'District of Columbia'
+};
 
-// Generate more cities to reach 1000
-const generateMoreCities = () => {
-  const states = [
-    'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 
-    'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
-    'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 
-    'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
-    'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
-  ];
-  
-  const cityPrefixes = [
-    'North', 'South', 'East', 'West', 'New', 'Old', 'Fort', 'Port', 'Lake', 'Mount',
-    'Saint', 'Upper', 'Lower', 'Central', 'Royal', 'Grand', 'Fair', 'Pine', 'Oak', 'Cedar',
-    'Green', 'Blue', 'Red', 'Silver', 'Golden', 'Pleasant', 'Spring', 'Summer', 'Winter', 'Fall'
-  ];
-  
-  const citySuffixes = [
-    'ville', 'ton', 'burg', 'berg', 'field', 'ford', 'port', 'land', 'town', 'wood',
-    'ridge', 'view', 'grove', 'haven', 'dale', 'side', 'shire', 'creek', 'springs', 'valley',
-    'heights', 'hills', 'city', 'park', 'harbor', 'bay', 'beach', 'falls', 'crossing', 'corner'
-  ];
-  
-  const cityNames = [
-    'Adams', 'Allen', 'Anderson', 'Bailey', 'Baker', 'Barnes', 'Bell', 'Bennett', 'Brooks', 'Brown',
-    'Butler', 'Campbell', 'Carter', 'Clark', 'Collins', 'Cook', 'Cooper', 'Cox', 'Davis', 'Edwards',
-    'Evans', 'Foster', 'Garcia', 'Gray', 'Green', 'Hall', 'Harris', 'Hill', 'Jackson', 'Johnson',
-    'Jones', 'King', 'Lee', 'Lewis', 'Long', 'Martin', 'Miller', 'Mitchell', 'Moore', 'Morgan',
-    'Morris', 'Murphy', 'Nelson', 'Parker', 'Peterson', 'Phillips', 'Powell', 'Reed', 'Roberts', 'Robinson',
-    'Rogers', 'Ross', 'Russell', 'Sanchez', 'Sanders', 'Scott', 'Smith', 'Stewart', 'Taylor', 'Thomas',
-    'Thompson', 'Turner', 'Walker', 'Ward', 'Washington', 'Watson', 'White', 'Williams', 'Wilson', 'Wood',
-    'Wright', 'Young', 'Clayton', 'Franklin', 'Harrison', 'Hudson', 'Jefferson', 'Lincoln', 'Madison', 'Monroe',
-    'Riverside', 'Springfield', 'Georgetown', 'Jamestown', 'Kingston', 'Lexington', 'Manchester', 'Newport', 'Oakland', 'Princeton'
-  ];
-
-  const additionalCities = [];
-  const existingCityNames = new Set(sampleCities.map(city => `${city.city}-${city.state}`));
-
-  // Generate additional cities to reach 1000
-  while (additionalCities.length + sampleCities.length < 1000) {
-    let cityName;
-    let state = states[Math.floor(Math.random() * states.length)];
-    
-    // 40% chance of using a prefix + name + suffix combination
-    if (Math.random() < 0.4) {
-      const prefix = cityPrefixes[Math.floor(Math.random() * cityPrefixes.length)];
-      const name = cityNames[Math.floor(Math.random() * cityNames.length)];
-      cityName = `${prefix} ${name}`;
-    } 
-    // 30% chance of using a name + suffix
-    else if (Math.random() < 0.7) {
-      const name = cityNames[Math.floor(Math.random() * cityNames.length)];
-      const suffix = citySuffixes[Math.floor(Math.random() * citySuffixes.length)];
-      cityName = `${name}${suffix}`;
-    } 
-    // 30% chance of using just a name
-    else {
-      cityName = cityNames[Math.floor(Math.random() * cityNames.length)];
-    }
-    
-    const cityKey = `${cityName}-${state}`;
-    
-    // Ensure we don't have duplicates
-    if (!existingCityNames.has(cityKey)) {
-      existingCityNames.add(cityKey);
-      
-      // Generate a population between 15,000 and 500,000
-      const population = Math.floor(15000 + Math.random() * 485000).toLocaleString();
-      
-      additionalCities.push({
-        city: cityName,
-        state,
-        population
-      });
-    }
-  }
-
-  return [...sampleCities, ...additionalCities];
+// Function to get state abbreviation from full name
+const getStateAbbreviation = (stateName: string): string => {
+  const entries = Object.entries(stateAbbreviations);
+  const match = entries.find(([_, name]) => name === stateName);
+  return match ? match[0] : stateName.substring(0, 2).toUpperCase();
 };
 
 export async function processAndSaveCitiesData() {
@@ -113,23 +75,76 @@ export async function processAndSaveCitiesData() {
       await fs.mkdir(dataDir, { recursive: true });
     }
     
-    // Generate 1000 cities
-    const allCities = generateMoreCities();
+    // Check if the user-provided CSV file exists
+    const providedCsvPath = path.join(process.cwd(), 'attached_assets', 'top_1000_cities.csv');
+    const destinationCsvPath = path.join(dataDir, 'cities.csv');
     
-    // Create CSV content
-    let csvContent = 'city,state,population\n';
-    allCities.forEach(city => {
-      csvContent += `${city.city},${city.state},${city.population}\n`;
-    });
-    
-    // Save to CSV file
-    const csvPath = path.join(dataDir, 'cities.csv');
-    await fs.writeFile(csvPath, csvContent);
-    
-    console.log(`Generated ${allCities.length} cities and saved to ${csvPath}`);
-    return csvPath;
+    try {
+      await fs.access(providedCsvPath);
+      console.log('Found provided cities CSV file, using it');
+      
+      // Process the user-provided CSV file
+      const cities: Array<{
+        city: string;
+        state: string;
+        state_name: string;
+        population: number;
+        slug: string;
+      }> = [];
+      
+      return new Promise<string>((resolve, reject) => {
+        createReadStream(providedCsvPath)
+          .pipe(csv())
+          .on('data', (data) => {
+            cities.push({
+              city: data.city,
+              state: getStateAbbreviation(data.state_name),
+              state_name: data.state_name,
+              population: parseInt(data.population.replace(/,/g, ''), 10),
+              slug: data.slug
+            });
+          })
+          .on('end', async () => {
+            console.log(`Processed ${cities.length} cities from provided CSV`);
+            
+            // Create a new CSV in the right format
+            let csvContent = 'city,state,population,state_name,slug\n';
+            cities.forEach(city => {
+              csvContent += `${city.city},${city.state},${city.population},${city.state_name},${city.slug}\n`;
+            });
+            
+            // Save to CSV file
+            await fs.writeFile(destinationCsvPath, csvContent);
+            console.log(`Saved ${cities.length} cities to ${destinationCsvPath}`);
+            resolve(destinationCsvPath);
+          })
+          .on('error', (error) => {
+            reject(error);
+          });
+      });
+    } catch (error) {
+      console.log('No provided CSV file found, using fallback data');
+      
+      // Create a basic CSV with just a few cities in case the provided file isn't found
+      const fallbackCities = [
+        { city: 'New York', state: 'NY', population: 8405837, state_name: 'New York', slug: 'new-york-ny' },
+        { city: 'Los Angeles', state: 'CA', population: 3884307, state_name: 'California', slug: 'los-angeles-ca' },
+        { city: 'Chicago', state: 'IL', population: 2718782, state_name: 'Illinois', slug: 'chicago-il' },
+        { city: 'Houston', state: 'TX', population: 2195914, state_name: 'Texas', slug: 'houston-tx' },
+        { city: 'Phoenix', state: 'AZ', population: 1513367, state_name: 'Arizona', slug: 'phoenix-az' }
+      ];
+      
+      let csvContent = 'city,state,population,state_name,slug\n';
+      fallbackCities.forEach(city => {
+        csvContent += `${city.city},${city.state},${city.population},${city.state_name},${city.slug}\n`;
+      });
+      
+      await fs.writeFile(destinationCsvPath, csvContent);
+      console.log(`Created fallback cities CSV at ${destinationCsvPath}`);
+      return destinationCsvPath;
+    }
   } catch (error) {
-    console.error('Error generating cities data:', error);
+    console.error('Error processing cities data:', error);
     throw error;
   }
 }

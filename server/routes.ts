@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Express, NextFunction, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import * as fs from 'fs/promises';
@@ -7,6 +7,7 @@ import csv from 'csv-parser';
 import { createReadStream } from 'fs';
 import { generateFacilities } from './facilityGenerator';
 import { processAndSaveCitiesData } from './cityGenerator';
+import { City, InsertCity } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize the city data when the server starts
@@ -20,6 +21,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error fetching cities:', error);
       res.status(500).json({ message: 'Failed to fetch cities' });
+    }
+  });
+
+  // Get all states
+  app.get('/api/states', async (req, res) => {
+    try {
+      const states = await storage.getAllStates();
+      res.json(states);
+    } catch (error) {
+      console.error('Error fetching states:', error);
+      res.status(500).json({ message: 'Failed to fetch states' });
+    }
+  });
+
+  // Get cities by state
+  app.get('/api/states/:state/cities', async (req, res) => {
+    try {
+      const state = req.params.state;
+      const cities = await storage.getCitiesByState(state);
+      res.json(cities);
+    } catch (error) {
+      console.error('Error fetching cities by state:', error);
+      res.status(500).json({ message: 'Failed to fetch cities by state' });
     }
   });
 
@@ -93,33 +117,55 @@ async function initializeData() {
       }
       
       // Read and process the CSV file
-      const cities = [];
-      
-      createReadStream(csvPath)
-        .pipe(csv())
-        .on('data', (data) => {
-          cities.push({
-            name: data.city,
-            state: data.state,
-            population: parseInt(data.population.replace(/,/g, ''), 10)
-          });
-        })
-        .on('end', async () => {
-          console.log(`Loaded ${cities.length} cities from CSV`);
-          
-          // Store cities in memory
-          for (const city of cities) {
-            await storage.createCity(city);
+      return new Promise<void>((resolve, reject) => {
+        const citiesArray: InsertCity[] = [];
+        
+        createReadStream(csvPath)
+          .pipe(csv())
+          .on('data', (data) => {
+            citiesArray.push({
+              name: data.city,
+              state: data.state,
+              population: parseInt(data.population.replace(/,/g, ''), 10),
+              stateName: data.state_name || '',
+              slug: data.slug || `${data.city.toLowerCase().replace(/ /g, '-')}-${data.state.toLowerCase()}`
+            });
+          })
+          .on('end', async () => {
+            console.log(`Loaded ${citiesArray.length} cities from CSV`);
             
-            // Generate facilities for each city
-            const facilities = generateFacilities(city.name, city.state);
-            for (const facility of facilities) {
-              await storage.createFacility(facility);
+            try {
+              // Store cities in memory
+              let completedCities = 0;
+              const totalCities = citiesArray.length;
+              
+              for (const city of citiesArray) {
+                await storage.createCity(city);
+                
+                // Generate facilities for each city
+                const facilities = generateFacilities(city.name, city.state);
+                for (const facility of facilities) {
+                  await storage.createFacility(facility);
+                }
+                
+                completedCities++;
+                if (completedCities % 100 === 0 || completedCities === totalCities) {
+                  console.log(`Processed ${completedCities}/${totalCities} cities`);
+                }
+              }
+              
+              console.log('Finished loading cities and generating facilities');
+              resolve();
+            } catch (error) {
+              console.error('Error storing cities and facilities:', error);
+              reject(error);
             }
-          }
-          
-          console.log('Finished loading cities and generating facilities');
-        });
+          })
+          .on('error', (error) => {
+            console.error('Error reading CSV:', error);
+            reject(error);
+          });
+      });
     }
   } catch (error) {
     console.error('Error initializing data:', error);
