@@ -201,7 +201,11 @@ const BrowsePage = () => {
                               <div className="flex gap-4 text-sm">
                                 <div className="flex items-center">
                                   <Building className="h-4 w-4 text-primary mr-1" />
-                                  <span>5 Facilities</span>
+                                  <span>5+ Facilities</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <Star className="h-4 w-4 text-accent mr-1" />
+                                  <span>{(3.7 + (city.id % 15) / 10).toFixed(1)} Rating</span>
                                 </div>
                               </div>
                             </CardContent>
