@@ -98,7 +98,7 @@ const Home = () => {
                   key={`${city.name}-${city.state}`}
                   href={`/city/${encodeURIComponent(`${city.name}-${city.state}`)}`}
                 >
-                  <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer">
+                  <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer border border-muted/50">
                     <h3 className="text-xl font-bold text-gray-900">{city.name}, {city.state}</h3>
                     <p className="text-gray-600 mb-4">Population: {city.population.toLocaleString()}</p>
                     <p className="text-gray-700">
@@ -106,11 +106,15 @@ const Home = () => {
                     </p>
                     <div className="flex gap-4 mt-4 text-sm">
                       <div className="flex items-center">
-                        <Building className="h-4 w-4 text-primary mr-1" />
+                        <div className="w-5 h-5 bg-primary rounded-sm flex items-center justify-center mr-1.5">
+                          <Building className="h-3 w-3 text-white" />
+                        </div>
                         <span>5+ Facilities</span>
                       </div>
                       <div className="flex items-center">
-                        <Star className="h-4 w-4 text-accent mr-1" />
+                        <div className="w-5 h-5 bg-accent rounded-sm flex items-center justify-center mr-1.5">
+                          <Star className="h-3 w-3 text-white" />
+                        </div>
                         <span>
                           {city.name === "New York" && city.state === "NY" ? "4.4" : 
                           city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
@@ -162,29 +166,29 @@ const Home = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-gray-900">Location Benefits</h3>
-                    <p className="text-gray-600">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
+                    <p className="text-gray-700">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-secondary text-white">
                       <Utensils className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-gray-900">Amenities Offered</h3>
-                    <p className="text-gray-600">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
+                    <p className="text-gray-700">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-accent text-white">
                       <Heart className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-gray-900">Type of Care Provided</h3>
-                    <p className="text-gray-600">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
+                    <p className="text-gray-700">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
                   </div>
                 </li>
               </ul>
