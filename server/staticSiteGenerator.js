@@ -283,9 +283,13 @@ const htmlTemplates = {
   facilityCard: (facility) => `
   <!-- Facility Card Component -->
   <div class="facility-card card h-100 shadow-sm border border-muted">
-    <img src="${facility.imageUrl}" class="card-img-top" alt="${facility.name}" loading="lazy">
     <div class="card-body">
-      <h3 class="card-title h5">${facility.name}</h3>
+      <div class="d-flex align-items-center mb-2">
+        <div class="facility-icon bg-primary-light rounded-circle p-2 me-3 text-center" style="width: 48px; height: 48px;">
+          <i class="fas fa-building text-primary fs-4"></i>
+        </div>
+        <h3 class="card-title h5 mb-0">${facility.name}</h3>
+      </div>
       <div class="facility-rating mb-2">
         ${generateStars(facility.rating)}
         <span class="text-muted ms-2">(${facility.reviewCount} reviews)</span>
