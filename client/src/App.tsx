@@ -5,6 +5,7 @@ import BrowsePage from "@/pages/BrowsePage";
 import ResourcesPage from "@/pages/ResourcesPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
+import LoadingDemo from "@/pages/LoadingDemo";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/resources" component={ResourcesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/loading-demo" component={LoadingDemo} />
           <Route component={NotFound} />
         </Switch>
       </div>

@@ -71,3 +71,31 @@
 .hero-gradient {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
 }
+
+/* Custom animations for loading components */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(calc(var(--orbitSize, 50px) * 0.8)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(calc(var(--orbitSize, 50px) * 0.8)) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+  --orbitSize: 100%;
+}
+
+/* Slow down animations for senior-friendliness */
+.animate-pulse {
+  animation-duration: 3s;
+}
+
+.animate-bounce {
+  animation-duration: 1.5s;
+}
+
+.animate-spin {
+  animation-duration: 3s;
+}
