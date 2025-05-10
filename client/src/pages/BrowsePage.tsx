@@ -209,6 +209,7 @@ const BrowsePage = () => {
                                     {city.name === "New York" && city.state === "NY" ? "4.4" : 
                                     city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
                                     city.name === "Chicago" && city.state === "IL" ? "4.1" : 
+                                    city.name === "Philadelphia" && city.state === "PA" ? "4.2" : 
                                     (3.7 + (city.id % 15) / 10).toFixed(1)} Rating
                                   </span>
                                 </div>
