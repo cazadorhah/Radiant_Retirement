@@ -372,6 +372,88 @@ const htmlTemplates = {
     </div>
   </section>
 
+  <!-- Finding the Right Senior Living Option Section -->
+  <section class="senior-living-options py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="/img/senior-couple-home.jpg" alt="Senior couple making living decisions" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title mb-4">Finding the Right Senior Living Option</h2>
+          <p class="mb-4">Choosing a senior living facility is an important decision that affects quality of life. Our directory helps you:</p>
+          
+          <div class="info-items">
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-check-circle text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Compare Options</h3>
+                <p class="mb-0">Review facilities side-by-side to find the best match for your needs.</p>
+              </div>
+            </div>
+            
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-dollar-sign text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Understand Costs</h3>
+                <p class="mb-0">Get transparent information about pricing and available financial assistance.</p>
+              </div>
+            </div>
+            
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-heartbeat text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Evaluate Care Options</h3>
+                <p class="mb-0">Determine which level of care is appropriate, from independent living to memory care.</p>
+              </div>
+            </div>
+            
+            <!-- Additional Considerations Section -->
+            <div class="additional-considerations mt-4 pt-4 border-top">
+              <h3 class="h5 mb-3">Additional Considerations</h3>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-pink">
+                  <i class="fas fa-map-marker-alt text-danger fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Location Benefits</h4>
+                  <p class="mb-0 small">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
+                </div>
+              </div>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-primary">
+                  <i class="fas fa-utensils text-primary fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Amenities Offered</h4>
+                  <p class="mb-0 small">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
+                </div>
+              </div>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-danger">
+                  <i class="fas fa-heart text-danger fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Type of Care Provided</h4>
+                  <p class="mb-0 small">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Popular Cities Section -->
   <section class="popular-cities py-5 bg-light">
     <div class="container">

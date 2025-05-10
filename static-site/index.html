@@ -1,635 +1,552 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore top-rated senior living facilities across 1,000 U.S. cities. Find assisted living, independent living, memory care, and nursing homes."
-    />
-    <title>Find Senior Living Facilities Near You | Radiant Retirement</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore top-rated senior living facilities across 1,000 U.S. cities. Find assisted living, independent living, memory care, and nursing homes.">
+  <title>Find Senior Living Facilities Near You | Radiant Retirement</title>
+  
+  <!-- Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Find Senior Living Facilities Near You | Radiant Retirement">
+  <meta property="og:description" content="Explore top-rated senior living facilities across 1,000 U.S. cities. Find assisted living, independent living, memory care, and nursing homes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radiantretirement.netlify.app">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Radiant Retirement",
+    "url": "https://radiantretirement.netlify.app",
+    "logo": "https://radiantretirement.netlify.app/img/logo.svg",
+    "description": "Find senior living facilities across the United States",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-555-0000",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/logo.svg" alt="Radiant Retirement Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+        Radiant Retirement
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/browse/index.html">Browse by State</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resources.html">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Open Graph Tags for Social Media -->
-    <meta
-      property="og:title"
-      content="Find Senior Living Facilities Near You | Radiant Retirement"
-    />
-    <meta
-      property="og:description"
-      content="Explore top-rated senior living facilities across 1,000 U.S. cities. Find assisted living, independent living, memory care, and nursing homes."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://radiantretirement.netlify.app" />
+  <main id="main-content">
 
-    <!-- Schema.org markup for Google -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Radiant Retirement",
-        "url": "https://radiantretirement.netlify.app",
-        "logo": "https://radiantretirement.netlify.app/img/logo.svg",
-        "description": "Find senior living facilities across the United States",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-800-555-0000",
-          "contactType": "customer service"
-        }
-      }
-    </script>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center min-vh-75">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-white mb-4">Find the Perfect Senior Living Community</h1>
+          <p class="lead text-white mb-5">Explore over 5,000 senior living facilities across 1,000 U.S. cities to find the right home for yourself or your loved ones.</p>
+          <div class="search-container bg-white p-4 rounded shadow-lg">
+            <!-- Search Form -->
+            
+  <!-- Search Form Component -->
+  <div class="search-form p-4 bg-white rounded shadow">
+    <h3 class="mb-3">Find Senior Living Facilities</h3>
+    <form id="search-facilities-form" action="/search-results.html" method="get">
+      <div class="row g-3">
+        <div class="col-md-5">
+          <label for="city-input" class="form-label">City</label>
+          <input type="text" class="form-control" id="city-input" name="city" placeholder="Enter city name">
+        </div>
+        <div class="col-md-4">
+          <label for="state-select" class="form-label">State</label>
+          <select class="form-select" id="state-select" name="state">
+            <option value="">Select state</option>
+            <!-- State options will be dynamically generated -->
+          </select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+      </div>
+      <div class="mt-3">
+        <div class="care-type-filters">
+          <p class="mb-2">Care Type:</p>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="independent-living" name="care_type" value="Independent Living">
+            <label class="form-check-label" for="independent-living">Independent Living</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="assisted-living" name="care_type" value="Assisted Living">
+            <label class="form-check-label" for="assisted-living">Assisted Living</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="memory-care" name="care_type" value="Memory Care">
+            <label class="form-check-label" for="memory-care">Memory Care</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="skilled-nursing" name="care_type" value="Nursing Care">
+            <label class="form-check-label" for="skilled-nursing">Skilled Nursing</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="rehabilitation" name="care_type" value="Rehabilitation">
+            <label class="form-check-label" for="rehabilitation">Rehabilitation</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Features Section -->
+  <section class="features py-5">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Why Choose Radiant Retirement?</h2>
+          <p class="section-subtitle">We help seniors and their families find the perfect retirement community with comprehensive information and tools.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-search fa-3x text-primary"></i>
+            </div>
+            <h3 class="feature-title">Comprehensive Directory</h3>
+            <p>Browse detailed listings of senior living facilities in over 1,000 U.S. cities with photos, amenities, and contact information.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-star fa-3x text-primary"></i>
+            </div>
+            <h3 class="feature-title">Verified Reviews</h3>
+            <p>Read honest feedback from residents and families to make informed decisions about senior living communities.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-hands-helping fa-3x text-primary"></i>
+            </div>
+            <h3 class="feature-title">Expert Resources</h3>
+            <p>Access guides and advice about senior living options, financing, and care planning to simplify your search.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Finding the Right Senior Living Option Section -->
+  <section class="senior-living-options py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="/img/senior-couple-home.jpg" alt="Senior couple making living decisions" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title mb-4">Finding the Right Senior Living Option</h2>
+          <p class="mb-4">Choosing a senior living facility is an important decision that affects quality of life. Our directory helps you:</p>
+          
+          <div class="info-items">
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-check-circle text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Compare Options</h3>
+                <p class="mb-0">Review facilities side-by-side to find the best match for your needs.</p>
+              </div>
+            </div>
+            
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-dollar-sign text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Understand Costs</h3>
+                <p class="mb-0">Get transparent information about pricing and available financial assistance.</p>
+              </div>
+            </div>
+            
+            <div class="info-item d-flex mb-4">
+              <div class="icon-container me-3 rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="fas fa-heartbeat text-white"></i>
+              </div>
+              <div>
+                <h3 class="h5 mb-2">Evaluate Care Options</h3>
+                <p class="mb-0">Determine which level of care is appropriate, from independent living to memory care.</p>
+              </div>
+            </div>
+            
+            <!-- Additional Considerations Section -->
+            <div class="additional-considerations mt-4 pt-4 border-top">
+              <h3 class="h5 mb-3">Additional Considerations</h3>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-pink">
+                  <i class="fas fa-map-marker-alt text-danger fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Location Benefits</h4>
+                  <p class="mb-0 small">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
+                </div>
+              </div>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-primary">
+                  <i class="fas fa-utensils text-primary fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Amenities Offered</h4>
+                  <p class="mb-0 small">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
+                </div>
+              </div>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon-container me-3 text-danger">
+                  <i class="fas fa-heart text-danger fa-lg"></i>
+                </div>
+                <div>
+                  <h4 class="h6 mb-1">Type of Care Provided</h4>
+                  <p class="mb-0 small">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+  <!-- Popular Cities Section -->
+  <section class="popular-cities py-5 bg-light">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Popular Cities</h2>
+          <p class="section-subtitle">Explore senior living options in these top destinations</p>
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">New York, NY</h3>
+              <p class="text-muted mb-2">Population: 8,405,837</p>
+              <p class="mb-3">Explore senior living options in New York, NY.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> 4.4 Avg Rating
+                </div>
+              </div>
+              <a href="/city/new-york-ny.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Los Angeles, CA</h3>
+              <p class="text-muted mb-2">Population: 3,884,307</p>
+              <p class="mb-3">Explore senior living options in Los Angeles, CA.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> 4.2 Avg Rating
+                </div>
+              </div>
+              <a href="/city/los-angeles-ca.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Chicago, IL</h3>
+              <p class="text-muted mb-2">Population: 2,718,782</p>
+              <p class="mb-3">Explore senior living options in Chicago, IL.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> 4.1 Avg Rating
+                </div>
+              </div>
+              <a href="/city/chicago-il.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Houston, TX</h3>
+              <p class="text-muted mb-2">Population: 2,195,914</p>
+              <p class="mb-3">Explore senior living options in Houston, TX.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> NaN Avg Rating
+                </div>
+              </div>
+              <a href="/city/houston-tx.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Philadelphia, PA</h3>
+              <p class="text-muted mb-2">Population: 1,553,165</p>
+              <p class="mb-3">Explore senior living options in Philadelphia, PA.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> 4.2 Avg Rating
+                </div>
+              </div>
+              <a href="/city/philadelphia-pa.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="city-card card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5">Phoenix, AZ</h3>
+              <p class="text-muted mb-2">Population: 1,513,367</p>
+              <p class="mb-3">Explore senior living options in Phoenix, AZ.</p>
+              <div class="d-flex gap-3 small text-muted mb-3">
+                <div>
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
+                </div>
+                <div>
+                  <i class="fas fa-star me-1"></i> NaN Avg Rating
+                </div>
+              </div>
+              <a href="/city/phoenix-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <a href="/browse/index.html" class="btn btn-primary">Browse All Cities by State</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Care Types Section -->
+  <section class="care-types py-5">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Types of Senior Care</h2>
+          <p class="section-subtitle">Understanding the different levels of care available for seniors</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg mb-4">
+          <div class="care-type-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-home fa-2x text-primary"></i>
+            </div>
+            <h3 class="care-title h5">Independent Living</h3>
+            <p class="small">For active seniors who can live independently but want community, amenities, and social activities.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg mb-4">
+          <div class="care-type-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
+            </div>
+            <h3 class="care-title h5">Assisted Living</h3>
+            <p class="small">For seniors who need help with daily activities like bathing, dressing, medication management.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg mb-4">
+          <div class="care-type-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-brain fa-2x text-primary"></i>
+            </div>
+            <h3 class="care-title h5">Memory Care</h3>
+            <p class="small">Specialized care for seniors with Alzheimer's, dementia, or other memory impairments.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg mb-4">
+          <div class="care-type-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-user-nurse fa-2x text-primary"></i>
+            </div>
+            <h3 class="care-title h5">Skilled Nursing</h3>
+            <p class="small">24-hour nursing care for seniors with complex medical needs requiring professional attention.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg mb-4">
+          <div class="care-type-card text-center p-4 h-100">
+            <div class="icon-container mb-3">
+              <i class="fas fa-procedures fa-2x text-primary"></i>
+            </div>
+            <h3 class="care-title h5">Rehabilitation</h3>
+            <p class="small">Short-term care to help seniors recover from surgery, injury, or illness before returning home.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <a href="/resources/care-types.html" class="btn btn-outline-primary">Learn More About Care Types</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="img/logo.svg"
-            alt="Radiant Retirement Logo"
-            width="40"
-            height="40"
-            class="d-inline-block align-text-top me-2"
-          />
-          Radiant Retirement
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="browse/index.html">Browse by State</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="resources.html">Resources</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+  <!-- CTA Section -->
+  <section class="cta py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-10 col-lg-8">
+          <h2 class="mb-4">Need Help Finding Senior Living Options?</h2>
+          <p class="lead mb-4">Our senior living advisors are ready to help you navigate all your options and find the perfect fit.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="/contact.html" class="btn btn-light btn-lg">Contact Us</a>
+            <a href="tel:+18005550000" class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i>Call (800) 555-0000</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5>Radiant Retirement</h5>
+          <p>Helping seniors and families find the perfect retirement community with comprehensive information and personalized guidance.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/browse/index.html">Browse by State</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
-
-    <main id="main-content">
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <div class="row align-items-center min-vh-75">
-            <div class="col-lg-6">
-              <h1 class="display-4 fw-bold text-white mb-4">
-                Find the Perfect Senior Living Community
-              </h1>
-              <p class="lead text-white mb-5">
-                Explore over 5,000 senior living facilities across 1,000 U.S.
-                cities to find the right home for yourself or your loved ones.
-              </p>
-              <div class="search-container bg-white p-4 rounded shadow-lg">
-                <!-- Search Form -->
-
-                <!-- Search Form Component -->
-                <div class="search-form p-4 bg-white rounded shadow">
-                  <h3 class="mb-3">Find Senior Living Facilities</h3>
-                  <form
-                    id="search-facilities-form"
-                    action="search-results.html"
-                    method="get"
-                  >
-                    <div class="row g-3">
-                      <div class="col-md-5">
-                        <label for="city-input" class="form-label">City</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="city-input"
-                          name="city"
-                          placeholder="Enter city name"
-                        />
-                      </div>
-                      <div class="col-md-4">
-                        <label for="state-select" class="form-label"
-                          >State</label
-                        >
-                        <select
-                          class="form-select"
-                          id="state-select"
-                          name="state"
-                        >
-                          <option value="">Select state</option>
-                          <!-- State options will be dynamically generated -->
-                        </select>
-                      </div>
-                      <div class="col-md-3 d-flex align-items-end">
-                        <button type="submit" class="btn btn-primary w-100">
-                          Search
-                        </button>
-                      </div>
-                    </div>
-                    <div class="mt-3">
-                      <div class="care-type-filters">
-                        <p class="mb-2">Care Type:</p>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="independent-living"
-                            name="care_type"
-                            value="Independent Living"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="independent-living"
-                            >Independent Living</label
-                          >
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="assisted-living"
-                            name="care_type"
-                            value="Assisted Living"
-                          />
-                          <label class="form-check-label" for="assisted-living"
-                            >Assisted Living</label
-                          >
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="memory-care"
-                            name="care_type"
-                            value="Memory Care"
-                          />
-                          <label class="form-check-label" for="memory-care"
-                            >Memory Care</label
-                          >
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="skilled-nursing"
-                            name="care_type"
-                            value="Nursing Care"
-                          />
-                          <label class="form-check-label" for="skilled-nursing"
-                            >Skilled Nursing</label
-                          >
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="rehabilitation"
-                            name="care_type"
-                            value="Rehabilitation"
-                          />
-                          <label class="form-check-label" for="rehabilitation"
-                            >Rehabilitation</label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5>Resources</h5>
+          <ul class="list-unstyled">
+            <li><a href="/resources.html">Senior Housing Guide</a></li>
+            <li><a href="/resources.html">Financing Options</a></li>
+            <li><a href="/resources.html">Types of Care</a></li>
+            <li><a href="/resources.html">FAQs</a></li>
+            <li><a href="/resources.html">Blog</a></li>
+          </ul>
         </div>
-      </section>
-
-      <!-- Features Section -->
-      <section class="features py-5">
-        <div class="container">
-          <div class="row text-center mb-5">
-            <div class="col-12">
-              <h2 class="section-title">Why Choose Radiant Retirement?</h2>
-              <p class="section-subtitle">
-                We help seniors and their families find the perfect retirement
-                community with comprehensive information and tools.
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="feature-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-search fa-3x text-primary"></i>
-                </div>
-                <h3 class="feature-title">Comprehensive Directory</h3>
-                <p>
-                  Browse detailed listings of senior living facilities in over
-                  1,000 U.S. cities with photos, amenities, and contact
-                  information.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="feature-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-star fa-3x text-primary"></i>
-                </div>
-                <h3 class="feature-title">Verified Reviews</h3>
-                <p>
-                  Read honest feedback from residents and families to make
-                  informed decisions about senior living communities.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="feature-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-hands-helping fa-3x text-primary"></i>
-                </div>
-                <h3 class="feature-title">Expert Resources</h3>
-                <p>
-                  Access guides and advice about senior living options,
-                  financing, and care planning to simplify your search.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Popular Cities Section -->
-      <section class="popular-cities py-5 bg-light">
-        <div class="container">
-          <div class="row text-center mb-5">
-            <div class="col-12">
-              <h2 class="section-title">Popular Cities</h2>
-              <p class="section-subtitle">
-                Explore senior living options in these top destinations
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">New York, NY</h3>
-                  <p class="text-muted mb-2">Population: 8,405,837</p>
-                  <p class="mb-3">
-                    Explore senior living options in New York, NY.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/new-york-ny.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">Los Angeles, CA</h3>
-                  <p class="text-muted mb-2">Population: 3,884,307</p>
-                  <p class="mb-3">
-                    Explore senior living options in Los Angeles, CA.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/los-angeles-ca.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">Chicago, IL</h3>
-                  <p class="text-muted mb-2">Population: 2,718,782</p>
-                  <p class="mb-3">
-                    Explore senior living options in Chicago, IL.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/chicago-il.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">Houston, TX</h3>
-                  <p class="text-muted mb-2">Population: 2,195,914</p>
-                  <p class="mb-3">
-                    Explore senior living options in Houston, TX.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/houston-tx.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">Philadelphia, PA</h3>
-                  <p class="text-muted mb-2">Population: 1,553,165</p>
-                  <p class="mb-3">
-                    Explore senior living options in Philadelphia, PA.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/philadelphia-pa.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="city-card card h-100 shadow-sm">
-                <div class="card-body">
-                  <h3 class="card-title h5">Phoenix, AZ</h3>
-                  <p class="text-muted mb-2">Population: 1,513,367</p>
-                  <p class="mb-3">
-                    Explore senior living options in Phoenix, AZ.
-                  </p>
-                  <div class="d-flex gap-3 small text-muted mb-3">
-                    <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
-                    <div><i class="fas fa-star me-1"></i> 4.3 Avg Rating</div>
-                  </div>
-                  <a
-                    href="city/phoenix-az.html"
-                    class="btn btn-outline-primary stretched-link"
-                    >View Facilities</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12 text-center">
-              <a href="browse/index.html" class="btn btn-primary"
-                >Browse All Cities by State</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Care Types Section -->
-      <section class="care-types py-5">
-        <div class="container">
-          <div class="row text-center mb-5">
-            <div class="col-12">
-              <h2 class="section-title">Types of Senior Care</h2>
-              <p class="section-subtitle">
-                Understanding the different levels of care available for seniors
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg mb-4">
-              <div class="care-type-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-home fa-2x text-primary"></i>
-                </div>
-                <h3 class="care-title h5">Independent Living</h3>
-                <p class="small">
-                  For active seniors who can live independently but want
-                  community, amenities, and social activities.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg mb-4">
-              <div class="care-type-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
-                </div>
-                <h3 class="care-title h5">Assisted Living</h3>
-                <p class="small">
-                  For seniors who need help with daily activities like bathing,
-                  dressing, medication management.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg mb-4">
-              <div class="care-type-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-brain fa-2x text-primary"></i>
-                </div>
-                <h3 class="care-title h5">Memory Care</h3>
-                <p class="small">
-                  Specialized care for seniors with Alzheimer's, dementia, or
-                  other memory impairments.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg mb-4">
-              <div class="care-type-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-user-nurse fa-2x text-primary"></i>
-                </div>
-                <h3 class="care-title h5">Skilled Nursing</h3>
-                <p class="small">
-                  24-hour nursing care for seniors with complex medical needs
-                  requiring professional attention.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg mb-4">
-              <div class="care-type-card text-center p-4 h-100">
-                <div class="icon-container mb-3">
-                  <i class="fas fa-procedures fa-2x text-primary"></i>
-                </div>
-                <h3 class="care-title h5">Rehabilitation</h3>
-                <p class="small">
-                  Short-term care to help seniors recover from surgery, injury,
-                  or illness before returning home.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-12 text-center">
-              <a href="resources.html" class="btn btn-outline-primary"
-                >Learn More About Care Types</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="cta py-5 bg-primary text-white">
-        <div class="container">
-          <div class="row justify-content-center text-center">
-            <div class="col-md-10 col-lg-8">
-              <h2 class="mb-4">Need Help Finding Senior Living Options?</h2>
-              <p class="lead mb-4">
-                Our senior living advisors are ready to help you navigate all
-                your options and find the perfect fit.
-              </p>
-              <div class="d-flex justify-content-center gap-3">
-                <a href="contact.html" class="btn btn-light btn-lg"
-                  >Contact Us</a
-                >
-                <a href="tel:+18005550000" class="btn btn-outline-light btn-lg"
-                  ><i class="fas fa-phone me-2"></i>Call (800) 555-0000</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <h5>Radiant Retirement</h5>
-            <p>
-              Helping seniors and families find the perfect retirement community
-              with comprehensive information and personalized guidance.
-            </p>
-            <div class="social-icons">
-              <a href="#" aria-label="Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-            <h5>Explore</h5>
-            <ul class="list-unstyled">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="browse/index.html">Browse by State</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-            <h5>Resources</h5>
-            <ul class="list-unstyled">
-              <li><a href="resources.html">Senior Housing Guide</a></li>
-              <li><a href="resources.html">Financing Options</a></li>
-              <li><a href="resources.html">Types of Care</a></li>
-              <li><a href="resources.html">FAQs</a></li>
-              <li><a href="resources.html">Blog</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-4">
-            <h5>Contact Us</h5>
-            <address>
-              <p>
-                <i class="fas fa-map-marker-alt me-2"></i> 123 Retirement Ave,
-                Suite 100<br />Phoenix, AZ 85001
-              </p>
-              <p><i class="fas fa-phone me-2"></i> (800) 555-0000</p>
-              <p>
-                <i class="fas fa-envelope me-2"></i> info@radiantretirement.com
-              </p>
-            </address>
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <p class="small mb-0">
-              &copy; 2023 Radiant Retirement. All rights reserved.
-            </p>
-          </div>
-          <div class="col-md-6 text-md-end">
-            <p class="small mb-0">
-              <a href="about.html">Privacy Policy</a> |
-              <a href="about.html">Terms of Service</a> |
-              <a href="sitemap.xml">Sitemap</a>
-            </p>
-          </div>
+        <div class="col-lg-4 col-md-4">
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Retirement Ave, Suite 100<br>Phoenix, AZ 85001</p>
+            <p><i class="fas fa-phone me-2"></i> (800) 555-0000</p>
+            <p><i class="fas fa-envelope me-2"></i> info@radiantretirement.com</p>
+          </address>
         </div>
       </div>
-    </footer>
+      <hr>
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <p class="small mb-0">&copy; 2023 Radiant Retirement. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="small mb-0">
+            <a href="/about.html">Privacy Policy</a> |
+            <a href="/about.html">Terms of Service</a> |
+            <a href="/sitemap.xml">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script src="js/scripts.js"></script>
-  </body>
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="/js/scripts.js"></script>
+</body>
 </html>

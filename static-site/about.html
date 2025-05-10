@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
   <!-- Skip to content link for accessibility -->
@@ -50,8 +50,8 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.svg" alt="Radiant Retirement Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+      <a class="navbar-brand" href="/">
+        <img src="/img/logo.svg" alt="Radiant Retirement Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
         Radiant Retirement
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,19 +60,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="browse/index.html">Browse by State</a>
+            <a class="nav-link" href="/browse/index.html">Browse by State</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="/about.html">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="resources.html">Resources</a>
+            <a class="nav-link" href="/resources.html">Resources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="/contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -82,210 +82,58 @@
   <main id="main-content">
 
   <!-- About Hero Section -->
-  <section class="about-hero py-5 bg-light">
+  <section class="about-hero py-5">
     <div class="container">
-      <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold mb-3" style="color: #2B6777;">About Radiant Retirement</h1>
-        <p class="lead mb-0" style="max-width: 800px; margin: 0 auto; color: #555;">
-          Simplifying the search for senior living with comprehensive information, trusted insights, 
-          and personalized guidance for families across America.
-        </p>
-      </div>
+      <h1 class="display-5 fw-bold mb-4">About Radiant Retirement</h1>
+      <p class="lead mb-5">We're on a mission to help seniors and their families find the perfect living solution with comprehensive information and personalized guidance.</p>
       
-      <div class="row align-items-center gx-5">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="position-relative">
-            <img src="img/about-team.jpg" alt="Radiant Retirement Team" class="img-fluid rounded-lg shadow-lg" style="border: 5px solid white;">
-            <div class="position-absolute" style="bottom: -20px; right: -20px; background-color: #52AB98; color: white; padding: 15px; border-radius: 10px; font-weight: bold;">
-              Serving seniors since 2018
-            </div>
-          </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="/img/about-team.jpg" alt="Radiant Retirement Team" class="img-fluid rounded shadow">
         </div>
         <div class="col-lg-6">
-          <div class="p-4 rounded-lg shadow-sm" style="background-color: white;">
-            <h2 class="h3 fw-bold mb-4" style="color: #2B6777; border-bottom: 2px solid #C8D8E4; padding-bottom: 10px;">Our Story</h2>
-            <p class="mb-4">Radiant Retirement was created out of a deep personal need: the need for clarity, compassion, and trustworthy guidance during one of life’s most challenging transitions—navigating aging and long-term care. Like many others, the founders of Radiant Retirement experienced the overwhelm of trying to understand senior living options, healthcare benefits, and financial planning for aging loved ones. The information was scattered, confusing, and often full of jargon.</p>
-            <p>Radiant Retirement exists to change that.</p>
-            <p>The goal is simple: to make vital information about senior care accessible and easy to understand. Whether you’re exploring retirement communities, applying for Medicare or Medicaid, or caring for a parent with memory loss, Radiant Retirement is here to support and inform you every step of the way.</p>
-            <p></p>
-            <p class="fst-italic mt-4" style="color: #52AB98;">"We believe every senior deserves to age with dignity in a community that truly feels like home."</p>
-          </div>
+          <h2 class="section-title mb-3">Our Story</h2>
+          <p>Radiant Retirement was founded in 2018 by a group of senior care professionals who recognized the challenges families face when searching for senior living options. After helping their own parents and grandparents through this process, they realized there was a need for a comprehensive, user-friendly resource.</p>
+          <p>Today, our team continues to expand our directory of senior living facilities across all 50 states, providing detailed information, verified reviews, and expert resources to help seniors and their loved ones make informed decisions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="why-choose-us py-5" style="background-color: #f8f9fa;">
+  <!-- Our Mission Section -->
+  <section class="mission-section py-5 bg-light">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="h2 fw-bold" style="color: #2B6777;">Why Choose Radiant Retirement</h2>
-        <p class="lead" style="max-width: 700px; margin: 0 auto; color: #555;">
-          What sets us apart in helping families find the perfect senior living solution
-        </p>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Feature 1 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-search fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">Comprehensive Directory</h3>
-              <p class="card-text">Access detailed profiles of over 5,000 senior living facilities across all 50 states, with verified information updated regularly.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Feature 2 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-user-check fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">Expert Guidance</h3>
-              <p class="card-text">Our team of certified senior living advisors provides personalized recommendations based on your specific needs and preferences.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Feature 3 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-star fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">Trusted Reviews</h3>
-              <p class="card-text">Read authentic reviews from residents and families to gain real insights about the communities you're considering.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row g-4 mt-2">
-        <!-- Feature 4 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-file-alt fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">Free Resources</h3>
-              <p class="card-text">Access guides, checklists, and articles to help you navigate every aspect of the senior living search process.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Feature 5 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-dollar-sign fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">No Hidden Costs</h3>
-              <p class="card-text">Our services are completely free for seniors and their families. We maintain transparency in all our operations.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Feature 6 -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm hover-shadow">
-            <div class="card-body text-center p-4">
-              <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: #C8D8E4;">
-                <i class="fas fa-phone-alt fa-2x" style="color: #2B6777;"></i>
-              </div>
-              <h3 class="h5 card-title mb-3" style="color: #2B6777;">Ongoing Support</h3>
-              <p class="card-text">We're with you every step of the way, from initial search through to move-in day and beyond.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Mission and Values Section -->
-  <section class="mission-section py-5" style="background-color: white;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <div class="position-relative">
-            <div class="bg-primary rounded-4 p-5 text-white" style="background-color: #2B6777 !important;">
-              <h2 class="fw-bold mb-4">Our Mission</h2>
-              <p class="lead mb-0">To empower seniors and their families with comprehensive, accurate information that simplifies the process of finding the right senior living community.</p>
-            </div>
-            <div class="position-absolute bg-accent text-white p-4 rounded-4 shadow" style="background-color: #F2B366 !important; bottom: -25px; right: -25px; max-width: 300px;">
-              <p class="mb-0 font-italic">
-                <i class="fas fa-quote-left me-2 opacity-50"></i>
-                We believe every senior deserves a supportive community that feels like home.
-                <i class="fas fa-quote-right ms-2 opacity-50"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-7 ps-lg-5">
-          <h3 class="fw-bold mb-4" style="color: #2B6777;">Our Core Values</h3>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title mb-4">Our Mission</h2>
+          <p class="lead mb-5">To empower seniors and their families with comprehensive, accurate information that simplifies the process of finding the right senior living community.</p>
           
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="d-flex align-items-start">
-                <div class="flex-shrink-0 me-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #C8D8E4;">
-                    <i class="fas fa-heart fa-lg" style="color: #2B6777;"></i>
-                  </div>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="value-card p-4 h-100">
+                <div class="icon-container mb-3">
+                  <i class="fas fa-hand-holding-heart fa-3x text-primary"></i>
                 </div>
-                <div>
-                  <h4 class="h5 fw-bold mb-2" style="color: #52AB98;">Compassion</h4>
-                  <p>We approach our work with genuine empathy, understanding the emotional journey of finding senior care. Every recommendation is made with the care we would want for our own loved ones.</p>
-                </div>
+                <h3 class="value-title h5">Compassion</h3>
+                <p>We approach our work with empathy, understanding the emotional journey of finding senior care.</p>
               </div>
             </div>
-            
-            <div class="col-md-6">
-              <div class="d-flex align-items-start">
-                <div class="flex-shrink-0 me-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #C8D8E4;">
-                    <i class="fas fa-check-circle fa-lg" style="color: #2B6777;"></i>
-                  </div>
+            <div class="col-md-4 mb-4">
+              <div class="value-card p-4 h-100">
+                <div class="icon-container mb-3">
+                  <i class="fas fa-check-circle fa-3x text-primary"></i>
                 </div>
-                <div>
-                  <h4 class="h5 fw-bold mb-2" style="color: #52AB98;">Integrity</h4>
-                  <p>We provide honest, unbiased information to help families make informed decisions. Our recommendations are never influenced by partnerships, and we maintain complete transparency in all operations.</p>
-                </div>
+                <h3 class="value-title h5">Integrity</h3>
+                <p>We provide honest, unbiased information to help families make informed decisions.</p>
               </div>
             </div>
-            
-            <div class="col-md-6">
-              <div class="d-flex align-items-start">
-                <div class="flex-shrink-0 me-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #C8D8E4;">
-                    <i class="fas fa-lightbulb fa-lg" style="color: #2B6777;"></i>
-                  </div>
+            <div class="col-md-4 mb-4">
+              <div class="value-card p-4 h-100">
+                <div class="icon-container mb-3">
+                  <i class="fas fa-lightbulb fa-3x text-primary"></i>
                 </div>
-                <div>
-                  <h4 class="h5 fw-bold mb-2" style="color: #52AB98;">Innovation</h4>
-                  <p>We continuously enhance our platforms and resources to provide the most user-friendly experience for seniors and their families. We embrace new technologies and methods to improve our service.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-6">
-              <div class="d-flex align-items-start">
-                <div class="flex-shrink-0 me-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #C8D8E4;">
-                    <i class="fas fa-users fa-lg" style="color: #2B6777;"></i>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="h5 fw-bold mb-2" style="color: #52AB98;">Community</h4>
-                  <p>We believe in the power of connection and building relationships with the families we serve. We're dedicated to creating a supportive network for seniors and their loved ones throughout their journey.</p>
-                </div>
+                <h3 class="value-title h5">Innovation</h3>
+                <p>We continuously improve our tools and resources to better serve seniors and their families.</p>
               </div>
             </div>
           </div>
@@ -295,203 +143,63 @@
   </section>
 
   <!-- Team Section -->
-  <section class="team-section py-5" style="background-color: #f8f9fa;">
+  <section class="team-section py-5">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="h2 fw-bold" style="color: #2B6777;">Meet Our Leadership Team</h2>
-        <p class="lead" style="max-width: 700px; margin: 0 auto; color: #555;">
-          Dedicated professionals with expertise in senior care, healthcare, and technology
-        </p>
-      </div>
+      <h2 class="section-title text-center mb-5">Our Team</h2>
       
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         <div class="col">
-          <div class="team-card card border-0 shadow h-100">
-            <div class="position-relative">
-              <img src="img/team-member-1.jpg" class="card-img-top" alt="Sarah Johnson">
-              <div class="position-absolute top-0 end-0 m-3">
-                <a href="#" class="text-white bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #52AB98 !important;">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="h5 fw-bold" style="color: #2B6777;">Sarah Johnson</h3>
-              <p class="text-muted mb-3" style="color: #52AB98 !important;">Founder & CEO</p>
-              <p class="mb-0">Former senior care administrator with 15+ years of experience in retirement communities. Sarah founded Radiant Retirement after helping her own parents navigate senior housing options.</p>
+          <div class="team-card card h-100 shadow-sm text-center">
+            <img src="/img/team-member-1.jpg" class="card-img-top" alt="Sarah Johnson">
+            <div class="card-body">
+              <h3 class="card-title h5">Sarah Johnson</h3>
+              <p class="text-muted mb-2">Founder & CEO</p>
+              <p class="small">Former senior care administrator with 15+ years of experience in retirement communities.</p>
             </div>
           </div>
         </div>
-        
         <div class="col">
-          <div class="team-card card border-0 shadow h-100">
-            <div class="position-relative">
-              <img src="img/team-member-2.jpg" class="card-img-top" alt="Michael Williams">
-              <div class="position-absolute top-0 end-0 m-3">
-                <a href="#" class="text-white bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #52AB98 !important;">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="h5 fw-bold" style="color: #2B6777;">Michael Williams</h3>
-              <p class="text-muted mb-3" style="color: #52AB98 !important;">Chief Senior Living Advisor</p>
-              <p class="mb-0">Certified gerontologist with a master's degree in aging services. Michael has helped over 500 families find the right senior living solutions across the country.</p>
+          <div class="team-card card h-100 shadow-sm text-center">
+            <img src="/img/team-member-2.jpg" class="card-img-top" alt="Michael Williams">
+            <div class="card-body">
+              <h3 class="card-title h5">Michael Williams</h3>
+              <p class="text-muted mb-2">Senior Living Advisor</p>
+              <p class="small">Certified gerontologist dedicated to helping families navigate senior living options.</p>
             </div>
           </div>
         </div>
-        
         <div class="col">
-          <div class="team-card card border-0 shadow h-100">
-            <div class="position-relative">
-              <img src="img/team-member-3.jpg" class="card-img-top" alt="Jennifer Chen">
-              <div class="position-absolute top-0 end-0 m-3">
-                <a href="#" class="text-white bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #52AB98 !important;">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="h5 fw-bold" style="color: #2B6777;">Jennifer Chen</h3>
-              <p class="text-muted mb-3" style="color: #52AB98 !important;">Director of Research</p>
-              <p class="mb-0">With a background in healthcare data analytics, Jennifer leads our research team in gathering and verifying information on senior living communities nationwide.</p>
+          <div class="team-card card h-100 shadow-sm text-center">
+            <img src="/img/team-member-3.jpg" class="card-img-top" alt="Jennifer Chen">
+            <div class="card-body">
+              <h3 class="card-title h5">Jennifer Chen</h3>
+              <p class="text-muted mb-2">Director of Research</p>
+              <p class="small">Passionate about ensuring our directory contains accurate, up-to-date information.</p>
             </div>
           </div>
         </div>
-        
         <div class="col">
-          <div class="team-card card border-0 shadow h-100">
-            <div class="position-relative">
-              <img src="img/team-member-4.jpg" class="card-img-top" alt="David Rodriguez">
-              <div class="position-absolute top-0 end-0 m-3">
-                <a href="#" class="text-white bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #52AB98 !important;">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="h5 fw-bold" style="color: #2B6777;">David Rodriguez</h3>
-              <p class="text-muted mb-3" style="color: #52AB98 !important;">Content & Education Director</p>
-              <p class="mb-0">A former healthcare journalist, David creates educational resources and guides that simplify complex senior care topics for families making important decisions.</p>
+          <div class="team-card card h-100 shadow-sm text-center">
+            <img src="/img/team-member-4.jpg" class="card-img-top" alt="David Rodriguez">
+            <div class="card-body">
+              <h3 class="card-title h5">David Rodriguez</h3>
+              <p class="text-muted mb-2">Content Director</p>
+              <p class="small">Creates educational resources to help families understand senior living options.</p>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center mt-5">
-        <a href="#" class="btn px-4 py-2 rounded-pill" style="background-color: #2B6777; color: white;">View Full Team</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials-section py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="h2 fw-bold" style="color: #2B6777;">What Families Say</h2>
-        <p class="lead" style="max-width: 700px; margin: 0 auto; color: #555;">
-          Hear from families who found the perfect senior living community with our help
-        </p>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Testimonial 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100">
-            <div class="card-body p-4">
-              <div class="mb-3" style="color: #F2B366;">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="mb-4">"Radiant Retirement made what seemed like an overwhelming process so much easier. Their personalized guidance helped us find the perfect assisted living facility for my mother. The detailed information about each facility was invaluable."</p>
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0 me-3">
-                  <div class="bg-secondary rounded-circle" style="width: 50px; height: 50px; background-color: #C8D8E4 !important;"></div>
-                </div>
-                <div>
-                  <h5 class="mb-0 fw-bold" style="color: #2B6777;">Patricia M.</h5>
-                  <p class="mb-0 small" style="color: #555;">Chicago, IL</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100">
-            <div class="card-body p-4">
-              <div class="mb-3" style="color: #F2B366;">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="mb-4">"We were looking for an independent living community for my father who wanted to stay active but needed some support. The Radiant Retirement team listened to his needs and preferences and found several excellent options in his area."</p>
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0 me-3">
-                  <div class="bg-secondary rounded-circle" style="width: 50px; height: 50px; background-color: #C8D8E4 !important;"></div>
-                </div>
-                <div>
-                  <h5 class="mb-0 fw-bold" style="color: #2B6777;">Robert T.</h5>
-                  <p class="mb-0 small" style="color: #555;">Phoenix, AZ</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100">
-            <div class="card-body p-4">
-              <div class="mb-3" style="color: #F2B366;">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-              <p class="mb-4">"The resources on financing senior care were incredibly helpful. We had no idea about the various payment options available, and their guide made it easy to understand. Our advisor was patient and took time to explain everything."</p>
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0 me-3">
-                  <div class="bg-secondary rounded-circle" style="width: 50px; height: 50px; background-color: #C8D8E4 !important;"></div>
-                </div>
-                <div>
-                  <h5 class="mb-0 fw-bold" style="color: #2B6777;">Linda & James K.</h5>
-                  <p class="mb-0 small" style="color: #555;">Denver, CO</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-5">
-        <a href="#" class="btn px-4 py-2 rounded-pill" style="background-color: #52AB98; color: white;">Read More Success Stories</a>
       </div>
     </div>
   </section>
 
   <!-- Contact CTA Section -->
-  <section class="contact-cta py-5" style="background-color: #2B6777;">
+  <section class="contact-cta py-5 bg-primary text-white">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 mb-4 mb-lg-0 text-center text-lg-start text-white">
-          <h2 class="h2 fw-bold mb-3">Have Questions About Senior Living?</h2>
-          <p class="lead mb-0">Our team of certified senior living advisors is ready to provide personalized guidance at no cost to you.</p>
-        </div>
-        <div class="col-lg-5 text-center text-lg-end">
-          <div class="d-inline-flex flex-column flex-sm-row gap-2">
-            <a href="contact.html" class="btn btn-light btn-lg fw-bold px-4">Contact Us Today</a>
-            <a href="tel:1-800-555-0000" class="btn btn-outline-light btn-lg px-4">
-              <i class="fas fa-phone-alt me-2"></i>1-800-555-0000
-            </a>
-          </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="mb-4">Have Questions About Senior Living?</h2>
+          <p class="lead mb-4">Our team of experts is ready to assist you in finding the perfect senior living solution.</p>
+          <a href="/contact.html" class="btn btn-light btn-lg">Contact Us Today</a>
         </div>
       </div>
     </div>
@@ -500,87 +208,58 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer py-5" style="background-color: #f8f9fa;">
+  <footer class="footer py-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="mb-4">
-            <img src="img/logo.svg" alt="Radiant Retirement Logo" height="50">
-          </div>
-          <p class="mb-4">Helping seniors and families find the perfect retirement community with comprehensive information and personalized guidance nationwide.</p>
-          <div class="social-icons mb-4">
-            <a href="#" aria-label="Facebook" class="me-2 text-decoration-none" style="color: #2B6777;">
-              <i class="fab fa-facebook-f fa-lg"></i>
-            </a>
-            <a href="#" aria-label="Twitter" class="me-2 text-decoration-none" style="color: #2B6777;">
-              <i class="fab fa-twitter fa-lg"></i>
-            </a>
-            <a href="#" aria-label="Instagram" class="me-2 text-decoration-none" style="color: #2B6777;">
-              <i class="fab fa-instagram fa-lg"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="text-decoration-none" style="color: #2B6777;">
-              <i class="fab fa-linkedin-in fa-lg"></i>
-            </a>
+          <h5>Radiant Retirement</h5>
+          <p>Helping seniors and families find the perfect retirement community with comprehensive information and personalized guidance.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5 class="fw-bold mb-3" style="color: #2B6777;">Explore</h5>
+          <h5>Explore</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-decoration-none" style="color: #555;">Home</a></li>
-            <li class="mb-2"><a href="browse/index.html" class="text-decoration-none" style="color: #555;">Browse by State</a></li>
-            <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: #555;">About Us</a></li>
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">Resources</a></li>
-            <li class="mb-2"><a href="contact.html" class="text-decoration-none" style="color: #555;">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/browse/index.html">Browse by State</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5 class="fw-bold mb-3" style="color: #2B6777;">Resources</h5>
+          <h5>Resources</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">Senior Housing Guide</a></li>
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">Financing Options</a></li>
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">Types of Care</a></li>
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">FAQs</a></li>
-            <li class="mb-2"><a href="resources.html" class="text-decoration-none" style="color: #555;">Blog</a></li>
+            <li><a href="/resources.html">Senior Housing Guide</a></li>
+            <li><a href="/resources.html">Financing Options</a></li>
+            <li><a href="/resources.html">Types of Care</a></li>
+            <li><a href="/resources.html">FAQs</a></li>
+            <li><a href="/resources.html">Blog</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
-          <h5 class="fw-bold mb-3" style="color: #2B6777;">Contact Us</h5>
-          <div class="mb-3 d-flex">
-            <div class="me-3" style="color: #52AB98; width: 20px;">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <p class="mb-0">123 Retirement Ave, Suite 100<br>Phoenix, AZ 85001</p>
-            </div>
-          </div>
-          <div class="mb-3 d-flex">
-            <div class="me-3" style="color: #52AB98; width: 20px;">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div>
-              <p class="mb-0"><a href="tel:8005550000" class="text-decoration-none" style="color: #555;">(800) 555-0000</a></p>
-            </div>
-          </div>
-          <div class="mb-3 d-flex">
-            <div class="me-3" style="color: #52AB98; width: 20px;">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <p class="mb-0"><a href="mailto:info@radiantretirement.com" class="text-decoration-none" style="color: #555;">info@radiantretirement.com</a></p>
-            </div>
-          </div>
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Retirement Ave, Suite 100<br>Phoenix, AZ 85001</p>
+            <p><i class="fas fa-phone me-2"></i> (800) 555-0000</p>
+            <p><i class="fas fa-envelope me-2"></i> info@radiantretirement.com</p>
+          </address>
         </div>
       </div>
-      <hr class="my-4" style="color: #C8D8E4;">
-      <div class="row align-items-center">
+      <hr>
+      <div class="row">
         <div class="col-md-6 mb-3 mb-md-0">
-          <p class="small mb-0" style="color: #555;">&copy; 2025 Radiant Retirement. All rights reserved.</p>
+          <p class="small mb-0">&copy; 2023 Radiant Retirement. All rights reserved.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <p class="small mb-0">
-            <a href="about.html" class="text-decoration-none me-3" style="color: #555;">Privacy Policy</a>
-            <a href="about.html" class="text-decoration-none me-3" style="color: #555;">Terms of Service</a>
-            <a href="sitemap.xml" class="text-decoration-none" style="color: #555;">Sitemap</a>
+            <a href="/about.html">Privacy Policy</a> |
+            <a href="/about.html">Terms of Service</a> |
+            <a href="/sitemap.xml">Sitemap</a>
           </p>
         </div>
       </div>
@@ -591,6 +270,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <!-- Custom JavaScript -->
-  <script src="js/scripts.js"></script>
+  <script src="/js/scripts.js"></script>
 </body>
 </html>
