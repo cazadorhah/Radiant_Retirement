@@ -1,77 +1,88 @@
+import { CircleOff, Clock, Sparkles } from 'lucide-react';
 import React from 'react';
 
 interface LoadingAnimationProps {
   size?: 'small' | 'medium' | 'large';
-  text?: string;
   variant?: 'primary' | 'secondary' | 'subtle';
+  text?: string;
+  showText?: boolean;
 }
 
 const LoadingAnimation: React.FC<LoadingAnimationProps> = ({
   size = 'medium',
-  text = 'Loading...',
   variant = 'primary',
+  text = 'Loading...',
+  showText = true,
 }) => {
-  // Size mappings
-  const sizeMap = {
+  // Size classes
+  const sizeClasses = {
     small: {
-      outer: 'w-12 h-12',
-      inner: 'w-8 h-8',
+      container: 'max-w-[150px]',
+      icon: 'h-8 w-8',
       text: 'text-sm',
     },
     medium: {
-      outer: 'w-16 h-16',
-      inner: 'w-10 h-10',
+      container: 'max-w-[200px]',
+      icon: 'h-12 w-12',
       text: 'text-base',
     },
     large: {
-      outer: 'w-24 h-24',
-      inner: 'w-16 h-16',
+      container: 'max-w-[250px]',
+      icon: 'h-16 w-16',
       text: 'text-lg',
     },
   };
 
-  // Color mappings for different variants
-  const colorMap = {
+  // Variant classes
+  const variantClasses = {
     primary: {
-      outer: 'border-blue-300',
-      inner: 'bg-blue-600',
+      icon: 'text-blue-600',
       text: 'text-blue-700',
     },
     secondary: {
-      outer: 'border-teal-300',
-      inner: 'bg-teal-500',
+      icon: 'text-teal-600',
       text: 'text-teal-700',
     },
     subtle: {
-      outer: 'border-gray-200',
-      inner: 'bg-gray-400',
-      text: 'text-gray-600',
+      icon: 'text-gray-600',
+      text: 'text-gray-700',
     },
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div className={`${sizeClasses[size].container} text-center mx-auto`}>
       <div className="relative">
-        {/* Outer circle that rotates slowly */}
-        <div 
-          className={`${sizeMap[size].outer} rounded-full border-4 ${colorMap[variant].outer} border-t-transparent animate-spin`}
-          style={{ animationDuration: '3s' }}
-        ></div>
+        {/* Center circle */}
+        <div className="flex justify-center items-center mb-4">
+          <div className={`rounded-full bg-gray-100 p-3 inline-block relative`}>
+            <Clock 
+              className={`${sizeClasses[size].icon} ${variantClasses[variant].icon} animate-pulse`} 
+            />
+            
+            {/* Orbiting element */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div 
+                className="absolute rounded-full bg-blue-100 p-1.5 animate-orbit"
+                style={{ 
+                  width: size === 'small' ? '20px' : size === 'medium' ? '24px' : '30px',
+                  height: size === 'small' ? '20px' : size === 'medium' ? '24px' : '30px',
+                }}
+              >
+                <Sparkles 
+                  className={`w-full h-full ${variantClasses[variant].icon}`} 
+                />
+              </div>
+            </div>
+          </div>
+        </div>
         
-        {/* Inner bouncing shape */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div 
-            className={`${sizeMap[size].inner} rounded-lg ${colorMap[variant].inner} animate-bounce`}
-            style={{ animationDuration: '2s' }}
-          ></div>
-        </div>
+        {/* Text */}
+        {showText && (
+          <p className={`${sizeClasses[size].text} ${variantClasses[variant].text} font-medium mt-2`}>
+            {text}
+          </p>
+        )}
       </div>
-      
-      {text && (
-        <div className={`mt-4 font-medium ${sizeMap[size].text} ${colorMap[variant].text}`}>
-          {text}
-        </div>
-      )}
     </div>
   );
 };

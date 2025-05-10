@@ -6,8 +6,10 @@ import SearchBar from "@/components/SearchBar";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRightCircle, Building, MapPin, Loader2, Star } from "lucide-react";
+import { ArrowRightCircle, Building, MapPin, Star } from "lucide-react";
 import HomeLink from "@/components/HomeLink";
+import SeniorThemeLoader from "@/components/SeniorThemeLoader";
+import ProgressLoader from "@/components/ProgressLoader";
 
 const stateFullNames: Record<string, string> = {
   'AL': 'Alabama',
@@ -138,7 +140,11 @@ const BrowsePage = () => {
 
           {isLoadingStates ? (
             <div className="flex justify-center py-12">
-              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <SeniorThemeLoader 
+                size="large" 
+                theme="home" 
+                text="Loading states..." 
+              />
             </div>
           ) : (
             <>
@@ -177,7 +183,12 @@ const BrowsePage = () => {
 
                   {isLoadingCities ? (
                     <div className="flex justify-center py-12">
-                      <Loader2 className="h-12 w-12 animate-spin text-primary" />
+                      <ProgressLoader
+                        size="medium"
+                        duration={5}
+                        text={`Looking for cities in ${getStateFullName(selectedState)}`}
+                        completeText="Cities loaded successfully!"
+                      />
                     </div>
                   ) : cities && cities.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
