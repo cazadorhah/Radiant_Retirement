@@ -799,95 +799,41 @@ const htmlTemplates = {
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Popular cities would be displayed here -->
         <div class="col">
-          <div class="city-card card h-100 shadow-sm overflow-hidden">
-            <div class="position-relative overflow-hidden" style="height: 200px;">
-              <img 
-                src="${getCityImage('Phoenix', 'AZ')}" 
-                alt="Phoenix, AZ" 
-                class="card-img-top w-100 h-100 object-fit-cover"
-                loading="lazy"
-              >
-            </div>
+          <div class="city-card card h-100 shadow-sm">
             <div class="card-body">
               <h3 class="card-title h5">Phoenix, AZ</h3>
               <p class="text-muted mb-2">Population: 1,513,367</p>
               <div class="d-flex gap-3 small text-muted mb-3">
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-building fa-xs"></i>
-                  </div>
-                  25+ Facilities
-                </div>
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-accent rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-star fa-xs"></i>
-                  </div>
-                  4.2 Avg Rating
-                </div>
+                <div><i class="fas fa-building me-1"></i> 25+ Facilities</div>
+                <div><i class="fas fa-star me-1"></i> 4.2 Avg Rating</div>
               </div>
-              <a href="/city/phoenix-az.html" class="btn btn-outline-primary">View Facilities</a>
+              <a href="/city/phoenix-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="city-card card h-100 shadow-sm overflow-hidden">
-            <div class="position-relative overflow-hidden" style="height: 200px;">
-              <img 
-                src="https://images.unsplash.com/photo-1554322662-74f6cde8fe24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" 
-                alt="Scottsdale, AZ" 
-                class="card-img-top w-100 h-100 object-fit-cover"
-                loading="lazy"
-              >
-            </div>
+          <div class="city-card card h-100 shadow-sm">
             <div class="card-body">
               <h3 class="card-title h5">Scottsdale, AZ</h3>
               <p class="text-muted mb-2">Population: 226,918</p>
               <div class="d-flex gap-3 small text-muted mb-3">
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-building fa-xs"></i>
-                  </div>
-                  18+ Facilities
-                </div>
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-accent rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-star fa-xs"></i>
-                  </div>
-                  4.5 Avg Rating
-                </div>
+                <div><i class="fas fa-building me-1"></i> 18+ Facilities</div>
+                <div><i class="fas fa-star me-1"></i> 4.5 Avg Rating</div>
               </div>
-              <a href="/city/scottsdale-az.html" class="btn btn-outline-primary">View Facilities</a>
+              <a href="/city/scottsdale-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="city-card card h-100 shadow-sm overflow-hidden">
-            <div class="position-relative overflow-hidden" style="height: 200px;">
-              <img 
-                src="https://images.unsplash.com/photo-1629409798519-51d92817a3fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" 
-                alt="Mesa, AZ" 
-                class="card-img-top w-100 h-100 object-fit-cover"
-                loading="lazy"
-              >
-            </div>
+          <div class="city-card card h-100 shadow-sm">
             <div class="card-body">
               <h3 class="card-title h5">Mesa, AZ</h3>
               <p class="text-muted mb-2">Population: 457,587</p>
               <div class="d-flex gap-3 small text-muted mb-3">
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-building fa-xs"></i>
-                  </div>
-                  15+ Facilities
-                </div>
-                <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-accent rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-star fa-xs"></i>
-                  </div>
-                  4.1 Avg Rating
-                </div>
+                <div><i class="fas fa-building me-1"></i> 15+ Facilities</div>
+                <div><i class="fas fa-star me-1"></i> 4.1 Avg Rating</div>
               </div>
-              <a href="/city/mesa-az.html" class="btn btn-outline-primary">View Facilities</a>
+              <a href="/city/mesa-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
             </div>
           </div>
         </div>
@@ -1581,26 +1527,6 @@ const htmlTemplates = {
 };
 
 // Helper functions
-function getCityImage(cityName, stateCode) {
-  // Map of known cities to their images
-  const cityImages = {
-    "New York-NY": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Los Angeles-CA": "https://images.unsplash.com/photo-1580655653885-65763b2597d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Chicago-IL": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Houston-TX": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Phoenix-AZ": "https://images.unsplash.com/photo-1558525815-1e33956ba910?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Philadelphia-PA": "https://images.unsplash.com/photo-1563057854-e862821a1e18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "San Antonio-TX": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "San Diego-CA": "https://images.unsplash.com/photo-1560984052-d9a19c329f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    "Dallas-TX": "https://images.unsplash.com/photo-1495247872890-a21dc4338657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
-  };
-  
-  const key = `${cityName}-${stateCode}`;
-  
-  // Return specific image if we have one, otherwise generate based on city name
-  return cityImages[key] || `https://source.unsplash.com/600x400/?${encodeURIComponent(cityName.toLowerCase())},city`;
-}
-
 function generateStars(rating) {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
