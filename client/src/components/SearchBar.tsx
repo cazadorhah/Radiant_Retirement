@@ -81,8 +81,9 @@ const SearchBar = () => {
                         onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
                       >
                         <div className="flex justify-between">
-                          <span className="text-gray-800 font-medium">{city.name}, {city.state}</span>
-                          {city.stateName && <span className="text-gray-600 text-sm">{city.stateName}</span>}
+                          <span className="text-gray-800 font-medium">
+                            {city.name}, {city.stateName ? `${city.stateName} (${city.state})` : city.state}
+                          </span>
                         </div>
                       </div>
                     ))
