@@ -1,18 +1,20 @@
 /* 
  * Radiant Retirement - Senior Living Directory
  * Custom CSS Styles
- * Colors: Primary #2B6777, Light #C8D8E4, Secondary #52AB98, Accent #F2B366
+ * New Color Palette: Primary #2C4BFF, Secondary #4C9A9A, Accent #FFA726
  */
 
 :root {
-  --primary: #2B6777;
-  --primary-light: #C8D8E4;
-  --primary-dark: #1F4D5A;
-  --secondary: #52AB98;
-  --accent: #F2B366;
-  --light: #F2F2F2;
-  --dark: #333333;
+  /* New Color Palette */
+  --primary: #2C4BFF;      /* Radiant Blue */
+  --primary-light: #E0E5FF;
+  --primary-dark: #2340D9;
+  --secondary: #4C9A9A;    /* Soft Teal */
+  --accent: #FFA726;       /* Sunrise Gold */
+  --light: #FFFDF8;        /* Cream White */
+  --dark: #333333;         /* Charcoal Gray */
   --white: #FFFFFF;
+  --muted: #F4EDE4;        /* Warm Sand */
   --gray-100: #F8F9FA;
   --gray-200: #E9ECEF;
   --gray-300: #DEE2E6;

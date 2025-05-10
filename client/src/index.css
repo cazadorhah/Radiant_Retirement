@@ -5,48 +5,73 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 20 14.3% 4.1%;
-  --muted: 60 4.8% 95.9%;
-  --muted-foreground: 25 5.3% 44.7%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 20 14.3% 4.1%;
+  /* New Color Palette */
+  /* Radiant Blue #2C4BFF */
+  --primary: 229 100% 59%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Sunrise Gold #FFA726 */
+  --accent: 36 100% 57%;
+  --accent-foreground: 0 0% 10%;
+  
+  /* Cream White #FFFDF8 */
+  --background: 48 100% 99%;
+  --foreground: 0 0% 20%;
+  
+  /* Charcoal Gray #333333 */
+  --card-foreground: 0 0% 20%;
+  --popover-foreground: 0 0% 20%;
+  
+  /* Soft Teal #4C9A9A */
+  --secondary: 180 35% 45%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Warm Sand #F4EDE4 */
+  --muted: 33 40% 93%;
+  --muted-foreground: 0 0% 40%;
+  
+  /* Other system colors */
+  --popover: var(--background);
   --card: 0 0% 100%;
-  --card-foreground: 20 14.3% 4.1%;
-  --border: 20 5.9% 90%;
-  --input: 20 5.9% 90%;
-  --primary: 234 89% 59%; /* 4F46E5 */
-  --primary-foreground: 211 100% 99%;
-  --secondary: 162 94% 40%; /* 10B981 */
-  --secondary-foreground: 24 9.8% 10%;
-  --accent: 38 93% 50%; /* F59E0B */
-  --accent-foreground: 24 9.8% 10%;
+  --border: 33 20% 90%;
+  --input: 33 20% 90%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
-  --ring: 20 14.3% 4.1%;
+  --ring: var(--primary);
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --primary: 234 89% 59%;
-  --primary-foreground: 211 100% 99%;
-  --secondary: 162 94% 40%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 38 93% 50%;
-  --accent-foreground: 0 0% 98%;
+  /* Darker version of the color palette for dark mode */
+  --background: 220 20% 12%;
+  --foreground: 48 100% 98%;
+  
+  /* Darker Radiant Blue */
+  --primary: 229 80% 45%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Darker Sunrise Gold */
+  --accent: 36 90% 50%;
+  --accent-foreground: 0 0% 10%;
+  
+  /* Darker UI elements */
+  --muted: 220 10% 20%;
+  --muted-foreground: 33 20% 70%;
+  --popover: 220 20% 12%;
+  --popover-foreground: 48 100% 98%;
+  --card: 220 20% 15%;
+  --card-foreground: 48 100% 98%;
+  --border: 220 15% 25%;
+  --input: 220 15% 25%;
+  
+  /* Darker Soft Teal */
+  --secondary: 180 30% 35%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* System colors for dark mode */
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --ring: 240 4.9% 83.9%;
+  --ring: var(--primary);
   --radius: 0.5rem;
 }
 
@@ -69,7 +94,7 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)/0.8));
 }
 
 /* Custom animations for loading components */
