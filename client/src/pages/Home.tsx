@@ -153,74 +153,38 @@ const Home = () => {
               <p className="text-lg text-gray-600 mb-6">
                 Choosing a senior living facility is an important decision that affects quality of life. Our directory helps you:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
-                      <i className="fas fa-check-circle"></i>
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Compare Options</h3>
-                    <p className="text-gray-600">Review facilities side-by-side to find the best match for your needs.</p>
+                    <h3 className="text-lg font-medium text-gray-900">Location Benefits</h3>
+                    <p className="text-gray-600">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
-                      <i className="fas fa-dollar-sign"></i>
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Understand Costs</h3>
-                    <p className="text-gray-600">Get transparent information about pricing and available financial assistance.</p>
+                    <h3 className="text-lg font-medium text-gray-900">Amenities Offered</h3>
+                    <p className="text-gray-600">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
-                      <i className="fas fa-heartbeat"></i>
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Evaluate Care Options</h3>
-                    <p className="text-gray-600">Determine which level of care is appropriate, from independent living to memory care.</p>
+                    <h3 className="text-lg font-medium text-gray-900">Type of Care Provided</h3>
+                    <p className="text-gray-600">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
                   </div>
                 </li>
               </ul>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Additional Considerations</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 text-pink-500">
-                      <i className="fas fa-map-marker-alt text-xl"></i>
-                    </div>
-                    <div className="ml-3">
-                      <h4 className="font-medium text-gray-900">Location Benefits</h4>
-                      <p className="text-gray-600">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 text-blue-500">
-                      <i className="fas fa-utensils text-xl"></i>
-                    </div>
-                    <div className="ml-3">
-                      <h4 className="font-medium text-gray-900">Amenities Offered</h4>
-                      <p className="text-gray-600">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 text-red-500">
-                      <i className="fas fa-heart text-xl"></i>
-                    </div>
-                    <div className="ml-3">
-                      <h4 className="font-medium text-gray-900">Type of Care Provided</h4>
-                      <p className="text-gray-600">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
