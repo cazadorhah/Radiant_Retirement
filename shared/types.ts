@@ -24,5 +24,6 @@ export interface Facility {
   rating: number;
   reviewCount: number;
   amenities: string[];
-  imageUrl: string;
+  imageUrl?: string;
+  facilityType?: string;
 }

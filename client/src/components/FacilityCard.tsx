@@ -36,12 +36,11 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ facility, featured = false 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="md:flex">
-        <div className="md:w-1/3 h-48 md:h-auto bg-gray-300 relative">
-          <img 
-            src={facility.imageUrl} 
-            alt={`${facility.name} senior living facility`} 
-            className="w-full h-full object-cover"
-          />
+        <div className="md:w-1/3 h-48 md:h-auto bg-primary-light flex items-center justify-center relative">
+          <div className="facility-icon text-center">
+            <i className={`fas fa-building text-primary text-6xl`}></i>
+            <div className="mt-2 text-primary font-semibold">Senior Living</div>
+          </div>
           {featured && (
             <div className="absolute top-0 right-0 bg-accent text-white px-3 py-1 m-2 rounded-full text-sm font-semibold">
               Featured
