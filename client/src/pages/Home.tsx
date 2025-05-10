@@ -4,7 +4,7 @@ import { City } from "@shared/types";
 import SearchBar from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Sun, Building, Star, MessageSquare, MapPin, Utensils, Heart } from "lucide-react";
+import { Building, Star, MessageSquare, MapPin, Utensils, Heart, HandHeart, Clock, Users } from "lucide-react";
 
 const Home = () => {
   const { data: cities, isLoading } = useQuery<City[]>({
@@ -28,11 +28,11 @@ const Home = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Why Choose Radiant Retirement?
+            <h2 className="text-3xl font-bold text-     #2C4BFF-900">
+              Feel Confident. Feel Supported. Feel at Home.
             </h2>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              We help seniors and their families find the perfect retirement community with comprehensive information and tools.
+             We understand this is more than a move—it’s a life transition. We’re here to make it feel right.
             </p>
           </div>
 
@@ -41,27 +41,27 @@ const Home = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Comprehensive Directory</h3>
+              <h3 className="text-xl font-semibold mb-2">A Kinder Way to Search</h3>
               <p className="text-gray-700">
-                Browse detailed listings of senior living facilities in over 1,000 U.S. cities.
+                No pressure, no confusion—just thoughtful help every step of the way.
               </p>
             </div>
             <div className="bg-muted p-6 rounded-lg text-center">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Verified Reviews</h3>
+              <h3 className="text-xl font-semibold mb-2">Here When You Need Us</h3>
               <p className="text-gray-700">
-                Read honest feedback from residents and families to make informed decisions.
+                Whether you’re just beginning or feeling stuck, we’re a steady hand to guide you forward.
               </p>
             </div>
             <div className="bg-muted p-6 rounded-lg text-center">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Expert Resources</h3>
+              <h3 className="text-xl font-semibold mb-2">We Put People First</h3>
               <p className="text-gray-700">
-                Access guides and advice about senior living options, financing, and care planning.
+                Because it’s not just about finding a place—it’s about protecting dignity, safety, and joy.
               </p>
             </div>
           </div>
