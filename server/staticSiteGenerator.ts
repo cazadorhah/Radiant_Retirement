@@ -374,7 +374,7 @@ const htmlTemplates = {
               <p class="mb-3">Explore senior living options in ${city.name}, ${city.state}.</p>
               <div class="d-flex gap-3 small text-muted mb-3">
                 <div>
-                  <i class="fas fa-building me-1"></i> 5 Facilities
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
                 </div>
                 <div>
                   <i class="fas fa-star me-1"></i> 4.3 Avg Rating
@@ -701,7 +701,7 @@ const htmlTemplates = {
               <h3 class="card-title h5">Phoenix, AZ</h3>
               <p class="text-muted mb-2">Population: 1,513,367</p>
               <div class="d-flex gap-3 small text-muted mb-3">
-                <div><i class="fas fa-building me-1"></i> 25 Facilities</div>
+                <div><i class="fas fa-building me-1"></i> 25+ Facilities</div>
                 <div><i class="fas fa-star me-1"></i> 4.2 Avg Rating</div>
               </div>
               <a href="/city/phoenix-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
@@ -727,7 +727,7 @@ const htmlTemplates = {
               <h3 class="card-title h5">Mesa, AZ</h3>
               <p class="text-muted mb-2">Population: 457,587</p>
               <div class="d-flex gap-3 small text-muted mb-3">
-                <div><i class="fas fa-building me-1"></i> 15 Facilities</div>
+                <div><i class="fas fa-building me-1"></i> 15+ Facilities</div>
                 <div><i class="fas fa-star me-1"></i> 4.1 Avg Rating</div>
               </div>
               <a href="/city/mesa-az.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
@@ -824,7 +824,7 @@ const htmlTemplates = {
                 <h3 class="card-title h5">${city.name}, ${city.state}</h3>
                 <p class="text-muted mb-2">Population: ${city.population.toLocaleString()}</p>
                 <div class="d-flex gap-3 small text-muted mb-3">
-                  <div><i class="fas fa-building me-1"></i> 5 Facilities</div>
+                  <div><i class="fas fa-building me-1"></i> 5+ Facilities</div>
                 </div>
                 <a href="/city/${city.slug}.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
               </div>
