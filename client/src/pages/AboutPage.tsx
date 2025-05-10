@@ -1,45 +1,9 @@
-import React, { useState } from "react";
-import { ExternalLink, CheckCircle } from "lucide-react";
+import React from "react";
+import { ExternalLink } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { Link } from "wouter";
 
 const AboutPage = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [id]: value
-    }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would typically send the data to a server
-    
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    }, 5000);
-  };
   return (
     <>
       <Helmet>
@@ -242,113 +206,18 @@ const AboutPage = () => {
         </div>
 
 
-        {/* Contact Form Section */}
+        {/* Call to Action Section */}
         <div className="bg-[#2B6777] rounded-lg p-8 mb-6">
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold text-white mb-3">Have Questions About Senior Living?</h2>
             <p className="text-lg text-white max-w-2xl mx-auto">
               Our team of certified senior living advisors is ready to provide personalized guidance at no cost to you.
             </p>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-            {submitted ? (
-              <div className="text-center py-8">
-                <div className="flex justify-center mb-4">
-                  <CheckCircle className="h-16 w-16 text-[#52AB98]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#2B6777] mb-3">Thank You!</h3>
-                <p className="text-gray-600 mb-3">
-                  We've received your information and will be in touch with you soon. 
-                  One of our senior living advisors will contact you within 24 hours.
-                </p>
-                <p className="text-sm text-gray-500">
-                  We appreciate your interest in Radiant Retirement.
-                </p>
-              </div>
-            ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
-                    <input 
-                      type="text" 
-                      id="firstName" 
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#52AB98]" 
-                      placeholder="Enter your first name"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
-                    <input 
-                      type="text" 
-                      id="lastName" 
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#52AB98]" 
-                      placeholder="Enter your last name"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#52AB98]" 
-                    placeholder="Enter your email address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#52AB98]" 
-                    placeholder="Enter your phone number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">How can we help you?</label>
-                  <textarea 
-                    id="message" 
-                    rows={3} 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#52AB98]" 
-                    placeholder="Tell us about your senior living needs"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                  ></textarea>
-                </div>
-                
-                <div className="flex items-center">
-                  <button 
-                    type="submit" 
-                    className="w-full py-3 px-6 bg-[#52AB98] text-white font-bold rounded-md hover:bg-[#2B6777] transition"
-                  >
-                    Request Information
-                  </button>
-                </div>
-                
-                <p className="text-xs text-gray-500 text-center mt-3">
-                  By submitting this form, you agree to our <a href="#" className="text-[#52AB98] hover:underline">Privacy Policy</a>. 
-                  We'll never share your information with third parties.
-                </p>
-              </form>
-            )}
-            
-
+            <div className="mt-6">
+              <Link href="/contact" className="inline-block py-3 px-6 bg-white text-[#2B6777] font-bold rounded-md hover:bg-[#C8D8E4] transition">
+                Contact Us Today
+              </Link>
+            </div>
           </div>
         </div>
       </div>

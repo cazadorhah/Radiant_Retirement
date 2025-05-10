@@ -21,6 +21,7 @@ function Router() {
           <Route path="/browse/:stateCode" component={BrowsePage} />
           <Route path="/resources" component={ResourcesPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
