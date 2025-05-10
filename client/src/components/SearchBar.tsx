@@ -47,10 +47,10 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <div className="bg-primary py-6">
+    <div className="hero-gradient py-6 bg-opacity-90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <p className="text-white text-center mb-4">
+          <p className="text-white text-center mb-4 font-medium">
             Find senior living options in over 1,000 U.S. cities
           </p>
           <div className="relative" ref={searchRef}>
@@ -66,7 +66,7 @@ const SearchBar = () => {
                 onChange={handleSearch}
                 onFocus={() => setShowResults(searchTerm.length > 0)}
               />
-              <button className="bg-accent text-white px-5 py-2 font-medium hover:bg-amber-600 transition">
+              <button className="bg-accent text-white px-5 py-2 font-medium hover:bg-amber-600 transition shadow-sm">
                 Search
               </button>
             </div>
@@ -77,7 +77,7 @@ const SearchBar = () => {
                     filteredCities.map((city) => (
                       <div
                         key={`${city.name}-${city.state}`}
-                        className="cursor-pointer p-2 hover:bg-blue-50 hover:text-blue-700 rounded transition-colors"
+                        className="cursor-pointer p-2 hover:bg-amber-50 hover:text-amber-700 rounded transition-colors"
                         onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
                       >
                         <div className="flex justify-between">
