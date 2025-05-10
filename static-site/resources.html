@@ -1,311 +1,519 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore comprehensive resources for seniors and caregivers, including senior living guides, financial assistance, healthcare resources, retirement planning, and caregiver support.">
-  <title>Resources | Radiant Retirement</title>
-  
-  <!-- Open Graph Tags for Social Media -->
-  <meta property="og:title" content="Resources | Radiant Retirement">
-  <meta property="og:description" content="Explore comprehensive resources for seniors and caregivers, including senior living guides, financial assistance, healthcare resources, retirement planning, and caregiver support.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://radiantretirement.netlify.app">
-  
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- Custom CSS -->
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
-  <!-- Skip to content link for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.svg" alt="Radiant Retirement Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
-        Radiant Retirement
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="browse/index.html">Browse by State</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="resources.html">Resources</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore comprehensive resources for seniors and caregivers, including senior living guides, financial assistance, healthcare resources, retirement planning, and caregiver support."
+    />
+    <title>Resources | Radiant Retirement</title>
 
-  <main id="main-content">
-    <!-- Page Header -->
-    <div class="page-header py-5 bg-light">
-      <div class="container">
-        <h1 class="display-4 fw-bold text-primary">Resources</h1>
-        <p class="lead">Comprehensive guides and information to help seniors and their families make informed decisions about senior living options and care.</p>
-      </div>
-    </div>
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Resources | Radiant Retirement" />
+    <meta
+      property="og:description"
+      content="Explore comprehensive resources for seniors and caregivers, including senior living guides, financial assistance, healthcare resources, retirement planning, and caregiver support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://radiantretirement.netlify.app" />
 
-    <!-- Resources Section -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="h3 text-center mb-4">Senior Living Resources <a href="resources" class="btn btn-sm btn-outline-secondary ms-2"><i class="fas fa-th-large"></i> View All Resources</a></h2>
-        <div class="row g-4">
-          <!-- Senior Living Guide -->
-          <div class="col-md-6 col-lg-4">
-            <a href="resources/senior-living-guide.html" class="text-decoration-none">
-              <div class="card h-100 shadow-sm hover-effect">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="icon-container bg-primary text-white p-3 rounded me-3">
-                      <i class="fas fa-home fa-2x"></i>
-                    </div>
-                    <h2 class="h4 card-title mb-0 text-primary">Senior Living Guide</h2>
-                  </div>
-                  <p class="card-text text-dark">Understanding different senior living options including independent living, assisted living, memory care, and nursing homes. Learn how to choose the right option for your needs.</p>
-                  <div class="text-primary mt-3 d-inline-block">Read More <i class="fas fa-arrow-right ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Financial Assistance -->
-          <div class="col-md-6 col-lg-4">
-            <a href="resources/financial-assistance.html" class="text-decoration-none">
-              <div class="card h-100 shadow-sm hover-effect">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="icon-container bg-success text-white p-3 rounded me-3">
-                      <i class="fas fa-dollar-sign fa-2x"></i>
-                    </div>
-                    <h2 class="h4 card-title mb-0 text-success">Financial Assistance</h2>
-                  </div>
-                  <p class="card-text text-dark">Explore financial options for senior care including Medicare, Medicaid, VA benefits, long-term care insurance, and other funding sources to help make senior care more affordable.</p>
-                  <div class="text-success mt-3 d-inline-block">Read More <i class="fas fa-arrow-right ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Healthcare Resources -->
-          <div class="col-md-6 col-lg-4">
-            <a href="resources/healthcare-resources.html" class="text-decoration-none">
-              <div class="card h-100 shadow-sm hover-effect">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="icon-container bg-danger text-white p-3 rounded me-3">
-                      <i class="fas fa-heartbeat fa-2x"></i>
-                    </div>
-                    <h2 class="h4 card-title mb-0 text-danger">Healthcare Resources</h2>
-                  </div>
-                  <p class="card-text text-dark">Access important healthcare information for seniors, including preventive care recommendations, managing chronic conditions, and finding the right healthcare providers.</p>
-                  <div class="text-danger mt-3 d-inline-block">Read More <i class="fas fa-arrow-right ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Retirement Planning -->
-          <div class="col-md-6 col-lg-6">
-            <a href="resources/retirement-planning.html" class="text-decoration-none">
-              <div class="card h-100 shadow-sm hover-effect">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="icon-container bg-info text-white p-3 rounded me-3">
-                      <i class="fas fa-calendar-alt fa-2x"></i>
-                    </div>
-                    <h2 class="h4 card-title mb-0 text-info">Retirement Planning</h2>
-                  </div>
-                  <p class="card-text text-dark">Resources for comprehensive retirement planning, including financial planning, housing considerations, and lifestyle choices. Learn strategies for downsizing, aging in place modifications, and how to evaluate when it might be time to consider alternative living arrangements.</p>
-                  <div class="text-info mt-3 d-inline-block">Read More <i class="fas fa-arrow-right ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Caregiver Support -->
-          <div class="col-md-6 col-lg-6">
-            <a href="resources/caregiver-support.html" class="text-decoration-none">
-              <div class="card h-100 shadow-sm hover-effect">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="icon-container bg-warning text-white p-3 rounded me-3">
-                      <i class="fas fa-hands-helping fa-2x"></i>
-                    </div>
-                    <h2 class="h4 card-title mb-0 text-warning">Caregiver Support</h2>
-                  </div>
-                  <p class="card-text text-dark">Resources for family caregivers including self-care strategies, respite care options, support groups, and practical caregiving tips. Learn about caregiver burnout prevention, balancing work and caregiving responsibilities, and having difficult conversations with aging parents.</p>
-                  <div class="text-warning mt-3 d-inline-block">Read More <i class="fas fa-arrow-right ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Additional Resources -->
-    <section class="py-5 bg-light">
-      <div class="container">
-        <h2 class="h3 text-center mb-4">Helpful Downloads <a href="downloads" class="btn btn-sm btn-outline-secondary ms-2"><i class="fas fa-folder-open"></i> View All Downloads</a></h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <a href="downloads/senior-living-checklist.pdf" class="text-decoration-none">
-              <div class="card hover-effect h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
-                  <h3 class="h5 text-dark">Senior Living Checklist</h3>
-                  <p class="text-secondary">A comprehensive checklist to help you evaluate senior living communities.</p>
-                  <div class="btn btn-sm btn-outline-primary">Download PDF <i class="fas fa-download ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="downloads/financial-planning-worksheet.pdf" class="text-decoration-none">
-              <div class="card hover-effect h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
-                  <h3 class="h5 text-dark">Financial Planning Worksheet</h3>
-                  <p class="text-secondary">Help estimate your retirement expenses and income sources.</p>
-                  <div class="btn btn-sm btn-outline-primary">Download PDF <i class="fas fa-download ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="downloads/medication-management-log.pdf" class="text-decoration-none">
-              <div class="card hover-effect h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
-                  <h3 class="h5 text-dark">Medication Management Log</h3>
-                  <p class="text-secondary">Track medications, dosages, and schedules for better healthcare management.</p>
-                  <div class="btn btn-sm btn-outline-primary">Download PDF <i class="fas fa-download ms-1"></i></div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Contact CTA -->
-    <section class="py-5 bg-primary text-white">
-      <div class="container text-center">
-        <h2>Need Personalized Guidance?</h2>
-        <p class="lead mb-4">Our senior living advisors can help you navigate options and find the perfect solution for your unique situation.</p>
-        <a href="contact.html" class="btn btn-light btn-lg">Contact an Advisor</a>
-      </div>
-    </section>
-  </main>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Footer -->
-  <footer class="footer py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5>About Radiant Retirement</h5>
-          <p class="text-muted">We help seniors and their families find the perfect senior living communities across the United States with comprehensive information, tools, and personalized guidance.</p>
-          <div class="social-icons mt-3">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5>Explore</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="browse/index.html">Browse by State</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="img/logo.svg"
+            alt="Radiant Retirement Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top me-2"
+          />
+          Radiant Retirement
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="browse/index.html">Browse by State</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="resources.html">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5>Resources</h5>
-          <ul class="list-unstyled">
-            <li><a href="resources/senior-living-guide.html">Senior Housing Guide</a></li>
-            <li><a href="resources/financial-assistance.html">Financing Options</a></li>
-            <li><a href="resources/healthcare-resources.html">Healthcare Resources</a></li>
-            <li><a href="resources/retirement-planning.html">Retirement Planning</a></li>
-            <li><a href="resources/caregiver-support.html">Caregiver Support</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <h5>Contact Us</h5>
-          <address>
-            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Retirement Ave, Suite 100<br>Phoenix, AZ 85001</p>
-            <p><i class="fas fa-phone me-2"></i> (800) 555-0000</p>
-            <p><i class="fas fa-envelope me-2"></i> info@radiantretirement.com</p>
-          </address>
-        </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <p class="small mb-0">&copy; 2023 Radiant Retirement. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <p class="small mb-0">
-            <a href="about.html">Privacy Policy</a> |
-            <a href="about.html">Terms of Service</a> |
-            <a href="sitemap.xml">Sitemap</a>
+    </nav>
+
+    <main id="main-content">
+      <!-- Page Header -->
+      <div class="page-header py-5 bg-light">
+        <div class="container">
+          <h1 class="display-4 fw-bold text-primary">Resources</h1>
+          <p class="lead">
+            Comprehensive guides and information to help seniors and their
+            families make informed decisions about senior living options and
+            care.
           </p>
         </div>
       </div>
-    </div>
-  </footer>
 
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Custom JavaScript -->
-  <script src="js/scripts.js"></script>
-  
-  <!-- Custom CSS for hover effect -->
-  <style>
-    .hover-effect {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-effect:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .icon-container {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-  </style>
-</body>
+      <!-- Resources Section -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="h3 text-center mb-4">
+            Senior Living Resources
+            <a href="resources" class="btn btn-sm btn-outline-secondary ms-2"
+              ><i class="fas fa-th-large"></i> View All Resources</a
+            >
+          </h2>
+          <div class="row g-4">
+            <!-- Senior Living Guide -->
+            <div class="col-md-6 col-lg-4">
+              <a
+                href="resources/senior-living-guide.html"
+                class="text-decoration-none"
+              >
+                <div class="card h-100 shadow-sm hover-effect">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div
+                        class="icon-container bg-primary text-white p-3 rounded me-3"
+                      >
+                        <i class="fas fa-home fa-2x"></i>
+                      </div>
+                      <h2 class="h4 card-title mb-0 text-primary">
+                        Senior Living Guide
+                      </h2>
+                    </div>
+                    <p class="card-text text-dark">
+                      Understanding different senior living options including
+                      independent living, assisted living, memory care, and
+                      nursing homes. Learn how to choose the right option for
+                      your needs.
+                    </p>
+                    <div class="text-primary mt-3 d-inline-block">
+                      Read More <i class="fas fa-arrow-right ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Financial Assistance -->
+            <div class="col-md-6 col-lg-4">
+              <a
+                href="resources/financial-assistance.html"
+                class="text-decoration-none"
+              >
+                <div class="card h-100 shadow-sm hover-effect">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div
+                        class="icon-container bg-success text-white p-3 rounded me-3"
+                      >
+                        <i class="fas fa-dollar-sign fa-2x"></i>
+                      </div>
+                      <h2 class="h4 card-title mb-0 text-success">
+                        Financial Assistance
+                      </h2>
+                    </div>
+                    <p class="card-text text-dark">
+                      Explore financial options for senior care including
+                      Medicare, Medicaid, VA benefits, long-term care insurance,
+                      and other funding sources to help make senior care more
+                      affordable.
+                    </p>
+                    <div class="text-success mt-3 d-inline-block">
+                      Read More <i class="fas fa-arrow-right ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Healthcare Resources -->
+            <div class="col-md-6 col-lg-4">
+              <a
+                href="resources/healthcare-resources.html"
+                class="text-decoration-none"
+              >
+                <div class="card h-100 shadow-sm hover-effect">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div
+                        class="icon-container bg-danger text-white p-3 rounded me-3"
+                      >
+                        <i class="fas fa-heartbeat fa-2x"></i>
+                      </div>
+                      <h2 class="h4 card-title mb-0 text-danger">
+                        Healthcare Resources
+                      </h2>
+                    </div>
+                    <p class="card-text text-dark">
+                      Access important healthcare information for seniors,
+                      including preventive care recommendations, managing
+                      chronic conditions, and finding the right healthcare
+                      providers.
+                    </p>
+                    <div class="text-danger mt-3 d-inline-block">
+                      Read More <i class="fas fa-arrow-right ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Retirement Planning -->
+            <div class="col-md-6 col-lg-6">
+              <a
+                href="resources/retirement-planning.html"
+                class="text-decoration-none"
+              >
+                <div class="card h-100 shadow-sm hover-effect">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div
+                        class="icon-container bg-info text-white p-3 rounded me-3"
+                      >
+                        <i class="fas fa-calendar-alt fa-2x"></i>
+                      </div>
+                      <h2 class="h4 card-title mb-0 text-info">
+                        Retirement Planning
+                      </h2>
+                    </div>
+                    <p class="card-text text-dark">
+                      Resources for comprehensive retirement planning, including
+                      financial planning, housing considerations, and lifestyle
+                      choices. Learn strategies for downsizing, aging in place
+                      modifications, and how to evaluate when it might be time
+                      to consider alternative living arrangements.
+                    </p>
+                    <div class="text-info mt-3 d-inline-block">
+                      Read More <i class="fas fa-arrow-right ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Caregiver Support -->
+            <div class="col-md-6 col-lg-6">
+              <a
+                href="resources/caregiver-support.html"
+                class="text-decoration-none"
+              >
+                <div class="card h-100 shadow-sm hover-effect">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div
+                        class="icon-container bg-warning text-white p-3 rounded me-3"
+                      >
+                        <i class="fas fa-hands-helping fa-2x"></i>
+                      </div>
+                      <h2 class="h4 card-title mb-0 text-warning">
+                        Caregiver Support
+                      </h2>
+                    </div>
+                    <p class="card-text text-dark">
+                      Resources for family caregivers including self-care
+                      strategies, respite care options, support groups, and
+                      practical caregiving tips. Learn about caregiver burnout
+                      prevention, balancing work and caregiving
+                      responsibilities, and having difficult conversations with
+                      aging parents.
+                    </p>
+                    <div class="text-warning mt-3 d-inline-block">
+                      Read More <i class="fas fa-arrow-right ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional Resources -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="h3 text-center mb-4">
+            Helpful Downloads
+            <a href="downloads" class="btn btn-sm btn-outline-secondary ms-2"
+              ><i class="fas fa-folder-open"></i> View All Downloads</a
+            >
+          </h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <a
+                href="downloads/senior-living-checklist.pdf"
+                class="text-decoration-none"
+              >
+                <div class="card hover-effect h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                    <h3 class="h5 text-dark">Senior Living Checklist</h3>
+                    <p class="text-secondary">
+                      A comprehensive checklist to help you evaluate senior
+                      living communities.
+                    </p>
+                    <div class="btn btn-sm btn-outline-primary">
+                      Download PDF <i class="fas fa-download ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a
+                href="downloads/financial-planning-worksheet.pdf"
+                class="text-decoration-none"
+              >
+                <div class="card hover-effect h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                    <h3 class="h5 text-dark">Financial Planning Worksheet</h3>
+                    <p class="text-secondary">
+                      Help estimate your retirement expenses and income sources.
+                    </p>
+                    <div class="btn btn-sm btn-outline-primary">
+                      Download PDF <i class="fas fa-download ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a
+                href="downloads/medication-management-log.pdf"
+                class="text-decoration-none"
+              >
+                <div class="card hover-effect h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                    <h3 class="h5 text-dark">Medication Management Log</h3>
+                    <p class="text-secondary">
+                      Track medications, dosages, and schedules for better
+                      healthcare management.
+                    </p>
+                    <div class="btn btn-sm btn-outline-primary">
+                      Download PDF <i class="fas fa-download ms-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+          <h2>Need Personalized Guidance?</h2>
+          <p class="lead mb-4">
+            Our senior living advisors can help you navigate options and find
+            the perfect solution for your unique situation.
+          </p>
+          <a href="contact.html" class="btn btn-light btn-lg"
+            >Contact an Advisor</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5>About Radiant Retirement</h5>
+            <p class="text-muted">
+              We help seniors and their families find the perfect senior living
+              communities across the United States with comprehensive
+              information, tools, and personalized guidance.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Explore</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="browse/index.html">Browse by State</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="resources/senior-living-guide.html"
+                  >Senior Housing Guide</a
+                >
+              </li>
+              <li>
+                <a href="resources/financial-assistance.html"
+                  >Financing Options</a
+                >
+              </li>
+              <li>
+                <a href="resources/healthcare-resources.html"
+                  >Healthcare Resources</a
+                >
+              </li>
+              <li>
+                <a href="resources/retirement-planning.html"
+                  >Retirement Planning</a
+                >
+              </li>
+              <li>
+                <a href="resources/caregiver-support.html">Caregiver Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5>Contact Us</h5>
+            <address>
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Retirement Ave,
+                Suite 100<br />Phoenix, AZ 85001
+              </p>
+              <p><i class="fas fa-phone me-2"></i> (800) 555-0000</p>
+              <p>
+                <i class="fas fa-envelope me-2"></i> info@radiantretirement.com
+              </p>
+            </address>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="small mb-0">
+              &copy; 2023 Radiant Retirement. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="small mb-0">
+              <a href="about.html">Privacy Policy</a> |
+              <a href="about.html">Terms of Service</a> |
+              <a href="sitemap.xml">Sitemap</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+
+    <!-- Custom CSS for hover effect -->
+    <style>
+      .hover-effect {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa;
+      }
+      /* Add a slight border on hover to emphasize clickability */
+      .hover-effect:hover:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #ddd;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+      /* Make Read More text more prominent on hover */
+      .hover-effect:hover .text-primary,
+      .hover-effect:hover .text-success,
+      .hover-effect:hover .text-danger,
+      .hover-effect:hover .text-info,
+      .hover-effect:hover .text-warning {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      .icon-container {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+    </style>
+  </body>
 </html>
