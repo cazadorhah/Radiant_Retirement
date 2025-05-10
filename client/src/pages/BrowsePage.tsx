@@ -6,7 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRightCircle, Building, MapPin, Loader2 } from "lucide-react";
+import { ArrowRightCircle, Building, MapPin, Loader2, Star } from "lucide-react";
 import HomeLink from "@/components/HomeLink";
 
 const stateFullNames: Record<string, string> = {
