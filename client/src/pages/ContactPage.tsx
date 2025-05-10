@@ -44,9 +44,6 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-[#2B6777] mb-4">Contact Us</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Have questions about senior living options? Our team is here to help you find the perfect solution.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

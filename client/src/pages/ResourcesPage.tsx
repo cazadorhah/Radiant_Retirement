@@ -39,10 +39,7 @@ const ResourcesPage = () => {
       <ResourceSection 
         title="Senior Living Guide"
         icon={BookOpen}
-        description="Our comprehensive guide covers all aspects of senior living options. Learn about the differences between 
-        independent living, assisted living, memory care, and skilled nursing facilities. Find information on what amenities 
-        to look for, questions to ask during tours, and how to evaluate if a community is the right fit for you or your loved one. 
-        Our guide also includes tips on making the transition to senior living smooth and stress-free."
+        description="Senior living options vary based on a person’s needs and level of independence. Independent living is ideal for active seniors who want a maintenance-free lifestyle with services like meals, housekeeping, and social activities. Assisted living suits those who need help with daily tasks but don’t require round-the-clock medical care. Memory care offers a secure, structured environment for those with Alzheimer’s or dementia, while nursing homes provide 24/7 medical support for seniors with serious health conditions. When choosing, consider care needs, location, budget, and community feel—ultimately, the right fit should offer both proper support and a sense of home."
       />
       
       {/* Financial Assistance */}
@@ -50,20 +47,14 @@ const ResourcesPage = () => {
         title="Financial Assistance"
         icon={DollarSign}
         bgColor="bg-[#52AB98]"
-        description="Understand the various financial options available to fund senior living and care. This section covers Medicare, 
-        Medicaid, Veterans Aid & Attendance benefits, long-term care insurance, retirement savings strategies, and other payment sources. 
-        Learn about eligibility requirements, application processes, and how to maximize benefits. We also provide information on tax 
-        deductions and credits available to seniors and caregivers."
+        description="Many programs can help seniors manage the cost of aging. Social Security provides monthly income after retirement, acting as a financial foundation for most older adults. Medicare covers hospital and medical care for those 65+, while Medicaid helps low-income seniors with long-term care and services Medicare doesn’t cover. Veterans may qualify for additional support through the VA, including pensions and care benefits. Other resources like SSI, SNAP, and Meals on Wheels offer cash aid, food support, and home-delivered meals. Local charities and agencies can also help with bills, housing, and transportation—making it easier for families to find the support they need."
       />
       
       {/* Healthcare Resources */}
       <ResourceSection 
         title="Healthcare Resources"
         icon={Activity}
-        description="Access important healthcare information for seniors, including preventive care recommendations, managing chronic conditions, 
-        and coordinating care between different providers. Learn about telehealth options, prescription drug programs, and how to communicate 
-        effectively with healthcare professionals. This section also covers how to select the right primary care physician, specialist, or 
-        geriatric care manager to meet specific needs."
+        description="As health needs change with age, understanding available care options becomes essential. Medicare is the main insurance for seniors, covering hospital stays, doctor visits, and prescriptions, though it doesn’t pay for long-term custodial care. To help with out-of-pocket costs, many turn to supplemental insurance like Medigap or Medicare Advantage plans, which may include extra benefits like dental or vision. Preventive care—such as wellness visits, screenings, and vaccines—is fully covered and helps catch issues early. Tools like Medicare’s Care Compare can help families find trusted doctors and facilities, ensuring seniors receive quality care with confidence."
       />
       
       {/* Retirement Planning */}
@@ -71,20 +62,14 @@ const ResourcesPage = () => {
         title="Retirement Planning"
         icon={Calendar}
         bgColor="bg-[#52AB98]"
-        description="Plan for a fulfilling retirement with resources on financial planning, housing considerations, and lifestyle choices. 
-        Beyond finances, this section addresses the emotional and social aspects of retirement, including maintaining purpose, developing 
-        new hobbies, and building community connections. Learn strategies for downsizing, aging in place modifications, and how to evaluate 
-        when it might be time to consider alternative living arrangements."
+        description="Smart planning helps ensure financial peace of mind in your later years. Building savings through 401(k)s or IRAs, budgeting carefully, and adjusting investments over time are key strategies. Understanding your pension options, whether lifetime payments or a lump sum, can impact long-term security. The timing of Social Security is also important—waiting until full retirement age or later means larger monthly checks for life. Once retired, tracking expenses, using the 4% withdrawal rule, and maintaining an emergency fund can help your savings last. With the right steps, retirement can be both stable and fulfilling."
       />
       
       {/* Caregiver Support */}
       <ResourceSection 
         title="Caregiver Support"
         icon={Heart}
-        description="Resources for family caregivers including self-care strategies, respite care options, support groups, and practical 
-        caregiving tips. Learn about caregiver burnout prevention, balancing work and caregiving responsibilities, and having difficult 
-        conversations with aging parents. This section also provides guidance on building a care team, coordinating with other family members, 
-        and knowing when to seek professional assistance."
+        description="Caring for a loved one can be deeply fulfilling—but also physically and emotionally demanding. Respite care offers temporary relief so caregivers can rest and recharge, whether through in-home help or short-term stays at care facilities. Support groups provide a sense of community and understanding, helping caregivers feel less alone and more empowered. With training programs, caregivers can learn practical skills for managing daily care tasks with confidence. Just as important is self-care—seeking counseling, staying connected, and taking breaks are essential for long-term well-being. Caring for yourself is part of caring for someone else."
       />
     </div>
   );
