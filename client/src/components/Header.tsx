@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="hidden md:flex space-x-10">
               <Link href="/" className="text-gray-600 hover:text-primary">Home</Link>
               <Link href="/browse" className="text-gray-600 hover:text-primary">Browse States</Link>
-              <Link href="#" className="text-gray-600 hover:text-primary">Resources</Link>
+              <Link href="/resources" className="text-gray-600 hover:text-primary">Resources</Link>
               <Link href="#" className="text-gray-600 hover:text-primary">About</Link>
               <Link href="#" className="text-gray-600 hover:text-primary">Contact</Link>
             </nav>
@@ -47,7 +47,7 @@ const Header = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Home</Link>
             <Link href="/browse" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Browse States</Link>
-            <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Resources</Link>
+            <Link href="/resources" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Resources</Link>
             <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About</Link>
             <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Contact</Link>
           </div>

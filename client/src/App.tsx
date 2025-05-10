@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import CityPage from "@/pages/CityPage";
 import BrowsePage from "@/pages/BrowsePage";
+import ResourcesPage from "@/pages/ResourcesPage";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,6 +17,7 @@ function Router() {
           <Route path="/city/:cityName" component={CityPage} />
           <Route path="/browse" component={BrowsePage} />
           <Route path="/browse/:stateCode" component={BrowsePage} />
+          <Route path="/resources" component={ResourcesPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
