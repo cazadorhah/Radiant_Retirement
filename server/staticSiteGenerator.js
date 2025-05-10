@@ -280,16 +280,72 @@ const htmlTemplates = {
   </div>
   `,
 
-  facilityCard: (facility) => `
+  facilityCard: (facility) => {
+    // Select icon based on facility type
+    let icon = 'fa-building';
+    let bgClass = 'bg-primary-light';
+    let iconClass = 'text-primary';
+    
+    if (facility.facilityType) {
+      if (facility.facilityType === 'Memory Care') {
+        icon = 'fa-brain';
+        bgClass = 'bg-accent-light';
+        iconClass = 'text-accent';
+      } else if (facility.facilityType === 'Assisted Living') {
+        icon = 'fa-hand-holding-heart';
+        bgClass = 'bg-success-light';
+        iconClass = 'text-success';
+      } else if (facility.facilityType === 'Skilled Nursing') {
+        icon = 'fa-notes-medical';
+        bgClass = 'bg-secondary-light';
+        iconClass = 'text-secondary';
+      } else if (facility.facilityType === 'Continuing Care Retirement Community') {
+        icon = 'fa-house-user';
+        bgClass = 'bg-warning-light';
+        iconClass = 'text-warning';
+      }
+    }
+    
+    return `
   <!-- Facility Card Component -->
   <div class="facility-card card h-100 shadow-sm border border-muted">
     <div class="card-body">
       <div class="d-flex align-items-center mb-2">
-        <div class="facility-icon bg-primary-light rounded-circle p-2 me-3 text-center" style="width: 48px; height: 48px;">
-          <i class="fas fa-building text-primary fs-4"></i>
+        <div class="facility-icon ${bgClass} rounded-circle p-2 me-3 text-center" style="width: 48px; height: 48px;">
+          <i class="fas ${icon} ${iconClass} fs-4"></i>
         </div>
         <h3 class="card-title h5 mb-0">${facility.name}</h3>
       </div>
+      <div class="facility-type small mb-2">
+        <span class="badge bg-light text-dark">${facility.facilityType || 'Senior Living'}</span>
+      </div>
+      <div class="facility-rating mb-2">
+        ${generateStars(facility.rating)}
+        <span class="text-muted ms-2">(${facility.reviewCount} reviews)</span>
+      </div>
+      <p class="facility-address mb-2 small">
+        <i class="fas fa-map-marker-alt text-primary me-1"></i> ${facility.address}
+      </p>
+      <p class="facility-phone mb-2 small">
+        <i class="fas fa-phone text-primary me-1"></i> ${facility.phone}
+      </p>
+      <div class="facility-amenities mb-3">
+        <p class="mb-1 small fw-bold">Care Types:</p>
+        <div class="d-flex flex-wrap gap-1">
+          ${facility.amenities.map((amenity) => 
+            `<span class="badge bg-accent-light text-accent small">${amenity}</span>`
+          ).join('')}
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-white border-top-0 pt-0">
+      <div class="d-flex justify-content-between">
+        <a href="${facility.website}" class="btn btn-outline-primary btn-sm" target="_blank">Visit Website</a>
+        <a href="/facility/${facility.id}.html" class="btn btn-primary btn-sm">View Details</a>
+      </div>
+    </div>
+  </div>
+  `;
       <div class="facility-rating mb-2">
         ${generateStars(facility.rating)}
         <span class="text-muted ms-2">(${facility.reviewCount} reviews)</span>
@@ -751,10 +807,10 @@ const htmlTemplates = {
           <p>Explore senior living options in other cities in ${city.stateName || city.state}:</p>
           
           <div class="related-cities-grid mt-3">
-            ${/* Show a message to browse all cities if we don't have other cities to show */}
-            ${`<a href="/browse/${city.state.toLowerCase()}.html" class="btn btn-primary mt-3">
+            <!-- Show a link to browse all cities in this state -->
+            <a href="/browse/${city.state.toLowerCase()}.html" class="btn btn-primary mt-3">
               <i class="fas fa-list me-2"></i>View All ${city.stateName || city.state} Cities
-            </a>`}
+            </a>
           </div>
           
           <div class="browse-more mt-4">
@@ -1649,10 +1705,15 @@ function generateFacilities(cityName, stateName) {
     return Math.floor(Math.random() * 140) + 10;
   }
 
-  function generateImageUrl(facilityType) {
-    const categories = ['senior-living', 'retirement-home', 'nursing-home', 'assisted-living', 'senior-residence'];
-    const category = categories[Math.floor(Math.random() * categories.length)];
-    return `https://source.unsplash.com/800x600/?${category}`;
+  function generateFacilityType() {
+    const types = [
+      'Independent Living', 
+      'Assisted Living', 
+      'Memory Care', 
+      'Skilled Nursing', 
+      'Continuing Care Retirement Community'
+    ];
+    return types[Math.floor(Math.random() * types.length)];
   }
   
   // Create 5 facilities for the city
@@ -1669,7 +1730,7 @@ function generateFacilities(cityName, stateName) {
       rating: generateRating(),
       reviewCount: generateReviewCount(),
       amenities: generateRandomAmenities(),
-      imageUrl: generateImageUrl(name)
+      facilityType: generateFacilityType()
     };
     
     facilities.push(facility);
