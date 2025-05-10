@@ -61,7 +61,7 @@ const SearchBar = () => {
               <input
                 type="text"
                 placeholder="Search city or zip code..."
-                className="py-2 flex-1 focus:outline-none"
+                className="py-2 flex-1 focus:outline-none text-gray-800"
                 value={searchTerm}
                 onChange={handleSearch}
                 onFocus={() => setShowResults(searchTerm.length > 0)}

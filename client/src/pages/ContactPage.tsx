@@ -43,7 +43,7 @@ const ContactPage = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-bold text-[#2B6777] mb-4">Contact Us</h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Have questions about senior living options? Our team is here to help you find the perfect solution.
             </p>
@@ -51,52 +51,11 @@ const ContactPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-[#2B6777] mb-6">Get in Touch</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-[#C8D8E4] p-3 rounded-full mr-4">
-                    <Mail className="h-6 w-6 text-[#2B6777]" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@radiantretirement.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-[#C8D8E4] p-3 rounded-full mr-4">
-                    <MapPin className="h-6 w-6 text-[#2B6777]" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">Office Location</h3>
-                    <p className="text-gray-600">
-                      123 Retirement Lane<br />
-                      Seattle, WA 98101
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Office Hours</h3>
-                <div className="grid grid-cols-2 gap-2 text-gray-600">
-                  <div>Monday - Friday</div>
-                  <div>9:00 AM - 5:00 PM EST</div>
-                  <div>Saturday</div>
-                  <div>10:00 AM - 2:00 PM EST</div>
-                  <div>Sunday</div>
-                  <div>Closed</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-2xl font-bold text-[#2B6777] mb-6">
                 Have Questions About Senior Living?
               </h2>
               <p className="text-gray-600 mb-6">
-                Our team of certified senior living advisors is ready to provide personalized guidance at no cost to you.
+                Our team is ready to provide personalized guidance at no cost to you.
               </p>
 
               {formSubmitted ? (
