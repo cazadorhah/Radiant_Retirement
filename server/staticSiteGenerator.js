@@ -404,61 +404,32 @@ const htmlTemplates = {
             
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-secondary text-white" style="width: 48px; height: 48px;">
+                  <i class="fas fa-utensils"></i>
                 </div>
               </div>
               <div>
-                <h3 class="h5 mb-2">Understand Costs</h3>
-                <p class="mb-0">Get transparent information about pricing and available financial assistance.</p>
+                <h3 class="h5 mb-2">Amenities Offered</h3>
+                <p class="mb-0">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
               </div>
             </div>
             
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-accent text-white" style="width: 48px; height: 48px;">
+                  <i class="fas fa-heart"></i>
                 </div>
               </div>
               <div>
-                <h3 class="h5 mb-2">Evaluate Care Options</h3>
-                <p class="mb-0">Determine which level of care is appropriate, from independent living to memory care.</p>
+                <h3 class="h5 mb-2">Type of Care Provided</h3>
+                <p class="mb-0">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
               </div>
             </div>
             
             <div class="additional-considerations mt-4 pt-4 border-top">
-              <div class="info-item d-flex mb-4">
-                <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
-                    <i class="fas fa-map-marked-alt fa-lg text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="fw-medium mb-2">Location Benefits</h4>
-                  <p class="mb-0">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
-                </div>
-              </div>
-              
-              <div class="info-item d-flex mb-4">
-                <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
-                    <i class="fas fa-concierge-bell fa-lg text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="fw-medium mb-2">Amenities Offered</h4>
-                  <p class="mb-0">Discover what's included in daily living—meals, housekeeping, activities, transportation, and more.</p>
-                </div>
-              </div>
-              
-              <div class="info-item d-flex mb-4">
-                <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
-                    <i class="fas fa-hand-holding-heart fa-lg text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="fw-medium mb-2">Type of Care Provided</h4>
-                  <p class="mb-0">Understand the level of care available, whether it's independent living, assisted living, memory care, or skilled nursing.</p>
-                </div>
+              <p class="text-center mb-4">Ready to explore the perfect senior living option for you or your loved one?</p>
+              <div class="d-flex justify-content-center">
+                <a href="/contact.html" class="btn btn-primary px-4 py-2">Contact Us For More Information</a>
               </div>
             </div>
           </div>
