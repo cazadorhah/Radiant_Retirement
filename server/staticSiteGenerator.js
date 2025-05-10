@@ -126,11 +126,11 @@ const htmlTemplates = {
         <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
           <h5>Resources</h5>
           <ul class="list-unstyled">
-            <li><a href="/resources/senior-housing-guide.html">Senior Housing Guide</a></li>
-            <li><a href="/resources/financing-options.html">Financing Options</a></li>
-            <li><a href="/resources/care-types.html">Types of Care</a></li>
-            <li><a href="/resources/faqs.html">FAQs</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/resources.html">Senior Housing Guide</a></li>
+            <li><a href="/resources.html">Financing Options</a></li>
+            <li><a href="/resources.html">Types of Care</a></li>
+            <li><a href="/resources.html">FAQs</a></li>
+            <li><a href="/resources.html">Blog</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
@@ -149,8 +149,8 @@ const htmlTemplates = {
         </div>
         <div class="col-md-6 text-md-end">
           <p class="small mb-0">
-            <a href="/privacy-policy.html">Privacy Policy</a> |
-            <a href="/terms-of-service.html">Terms of Service</a> |
+            <a href="/about.html">Privacy Policy</a> |
+            <a href="/about.html">Terms of Service</a> |
             <a href="/sitemap.xml">Sitemap</a>
           </p>
         </div>
@@ -1725,10 +1725,9 @@ async function generateStaticSite() {
     
     await Promise.all(statePromises);
     
-    // Generate City pages (limit to 100 for this demo to avoid too many files)
+    // Generate City pages for all cities
     console.log('Generating city pages...');
-    const maxCities = 100;
-    const citiesToGenerate = cities.slice(0, maxCities);
+    const citiesToGenerate = cities; // Use all cities
     
     const cityPromises = citiesToGenerate.map(async (city, index) => {
       // Generate 5 facilities for each city
@@ -1740,8 +1739,8 @@ async function generateStaticSite() {
       
       await writeFile(path.join(staticDir, 'city', `${city.slug}.html`), cityPageHtml);
       
-      if ((index + 1) % 10 === 0) {
-        console.log(`Generated ${index + 1}/${maxCities} city pages`);
+      if ((index + 1) % 100 === 0) {
+        console.log(`Generated ${index + 1}/${citiesToGenerate.length} city pages`);
       }
       
       return city.name;
