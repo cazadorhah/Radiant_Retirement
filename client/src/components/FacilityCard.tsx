@@ -1,5 +1,23 @@
 import { Facility } from "@shared/types";
-import { Building, MapPin, Phone, Globe } from "lucide-react";
+import { Building, MapPin, Phone, Globe, Brain, Heart, Activity, Home } from "lucide-react";
+
+// Helper function to get the appropriate icon based on facility type
+const getFacilityIcon = (facilityType?: string) => {
+  switch (facilityType) {
+    case 'Memory Care':
+      return <Brain className="h-16 w-16 text-accent" />;
+    case 'Assisted Living':
+      return <Heart className="h-16 w-16 text-success" />;
+    case 'Skilled Nursing':
+      return <Activity className="h-16 w-16 text-secondary" />;
+    case 'Continuing Care Retirement Community':
+      return <Home className="h-16 w-16 text-warning" />;
+    case 'Independent Living':
+      return <Building className="h-16 w-16 text-primary" />;
+    default:
+      return <Building className="h-16 w-16 text-primary" />;
+  }
+};
 
 interface StarRatingProps {
   rating: number;
@@ -38,8 +56,8 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ facility, featured = false 
       <div className="md:flex">
         <div className="md:w-1/3 h-48 md:h-auto bg-primary-light flex items-center justify-center relative">
           <div className="facility-icon text-center">
-            <i className={`fas fa-building text-primary text-6xl`}></i>
-            <div className="mt-2 text-primary font-semibold">Senior Living</div>
+            {getFacilityIcon(facility.facilityType)}
+            <div className="mt-2 text-primary font-semibold">{facility.facilityType || "Senior Living"}</div>
           </div>
           {featured && (
             <div className="absolute top-0 right-0 bg-accent text-white px-3 py-1 m-2 rounded-full text-sm font-semibold">

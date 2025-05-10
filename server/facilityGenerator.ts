@@ -46,7 +46,10 @@ function generateAddress(city: string, state: string): string {
 
 // Generate a phone number
 function generatePhoneNumber(): string {
-  return faker.phone.number('(###) ###-####');
+  const areaCode = Math.floor(Math.random() * 900) + 100;
+  const prefix = Math.floor(Math.random() * 900) + 100;
+  const lineNumber = Math.floor(Math.random() * 9000) + 1000;
+  return `(${areaCode}) ${prefix}-${lineNumber}`;
 }
 
 // Generate a website URL
@@ -74,20 +77,17 @@ function generateReviewCount(): number {
   return Math.floor(Math.random() * 140) + 10;
 }
 
-// Generate image URL
-function generateImageUrl(facilityType: string): string {
-  const imageCategories = [
-    'senior,center',
-    'retirement,home',
-    'senior,living',
-    'nursing,home',
-    'retirement,community',
-    'assisted,living',
-    'senior,residence'
+// Generate facility type
+function generateFacilityType(): string {
+  const facilityTypes = [
+    'Independent Living',
+    'Assisted Living',
+    'Memory Care',
+    'Skilled Nursing',
+    'Continuing Care Retirement Community'
   ];
   
-  const category = imageCategories[Math.floor(Math.random() * imageCategories.length)];
-  return `https://source.unsplash.com/800x600/?${category}`;
+  return facilityTypes[Math.floor(Math.random() * facilityTypes.length)];
 }
 
 // Generate 5 facilities for a city
@@ -107,7 +107,7 @@ export function generateFacilities(cityName: string, stateName: string): Facilit
       rating: generateRating(),
       reviewCount: generateReviewCount(),
       amenities: generateAmenities(),
-      imageUrl: generateImageUrl(name)
+      facilityType: generateFacilityType()
     };
     
     facilities.push(facility);
