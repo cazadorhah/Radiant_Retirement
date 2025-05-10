@@ -94,7 +94,7 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(120deg, hsl(var(--primary)), hsl(var(--secondary)/0.5) 65%, hsl(var(--accent)));
+  background-color: hsl(var(--accent));
 }
 
 /* Custom animations for loading components */

@@ -50,13 +50,13 @@ const SearchBar = () => {
     <div className="hero-gradient py-6 bg-opacity-90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <p className="text-white text-center mb-4 font-medium">
+          <p className="text-white text-center mb-4 font-semibold drop-shadow-sm">
             Find senior living options in over 1,000 U.S. cities
           </p>
           <div className="relative" ref={searchRef}>
             <div className="flex items-center bg-white rounded-lg shadow-md overflow-hidden">
               <div className="px-3 py-2">
-                <Search className="h-5 w-5 text-gray-400" />
+                <Search className="h-5 w-5 text-gray-500" />
               </div>
               <input
                 type="text"
@@ -66,7 +66,7 @@ const SearchBar = () => {
                 onChange={handleSearch}
                 onFocus={() => setShowResults(searchTerm.length > 0)}
               />
-              <button className="bg-accent text-white px-5 py-2 font-medium hover:bg-amber-600 transition shadow-sm">
+              <button className="bg-primary text-white px-5 py-2 font-medium hover:bg-primary/90 transition shadow-sm">
                 Search
               </button>
             </div>
