@@ -3,6 +3,7 @@ import Home from "@/pages/Home";
 import CityPage from "@/pages/CityPage";
 import BrowsePage from "@/pages/BrowsePage";
 import ResourcesPage from "@/pages/ResourcesPage";
+import AboutPage from "@/pages/AboutPage";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ function Router() {
           <Route path="/browse" component={BrowsePage} />
           <Route path="/browse/:stateCode" component={BrowsePage} />
           <Route path="/resources" component={ResourcesPage} />
+          <Route path="/about" component={AboutPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
