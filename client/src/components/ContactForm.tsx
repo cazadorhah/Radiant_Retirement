@@ -49,18 +49,34 @@ const ContactForm: React.FC<ContactFormProps> = ({ cityName, stateName }) => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send form data to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          cityName,
+          stateName
+        }),
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to submit form');
+      }
       
       // Show success toast
       toast({
         title: 'Message sent!',
-        description: 'We have received your message and will contact you soon.',
+        description: 'We have received your message and will contact you soon about senior living options.',
       });
       
       // Reset form
       reset();
     } catch (error) {
+      console.error('Error submitting form:', error);
       // Show error toast
       toast({
         title: 'Error sending message',

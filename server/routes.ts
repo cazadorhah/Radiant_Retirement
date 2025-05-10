@@ -9,6 +9,7 @@ import { generateFacilities } from './facilityGenerator';
 import { processAndSaveCitiesData, getStateAbbreviation } from './cityGenerator';
 import { City, InsertCity } from "@shared/schema";
 import { z } from "zod";
+import { sendContactFormEmail } from './email';
 
 // State abbreviation mapping
 const stateAbbreviations: Record<string, string> = {
@@ -70,6 +71,19 @@ function getStateAbbreviationFromName(stateName: string | undefined): string {
   if (!stateName) return '';
   return stateAbbreviations[stateName] || stateName.substring(0, 2).toUpperCase();
 }
+
+// Contact form validation schema
+const contactFormSchema = z.object({
+  firstName: z.string().min(1, { message: "First name is required" }),
+  lastName: z.string().optional(),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  phone: z.string().optional(),
+  message: z.string().min(10, { message: "Message must be at least 10 characters long" }),
+  cityName: z.string().optional(),
+  stateName: z.string().optional(),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize the city data when the server starts
@@ -153,6 +167,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error fetching facilities:', error);
       res.status(500).json({ message: 'Failed to fetch facilities' });
+    }
+  });
+  
+  // Handle contact form submissions
+  app.post('/api/contact', async (req, res) => {
+    try {
+      // Validate the form data
+      const result = contactFormSchema.safeParse(req.body);
+      
+      if (!result.success) {
+        return res.status(400).json({ 
+          message: 'Invalid form data', 
+          errors: result.error.format() 
+        });
+      }
+      
+      const formData = result.data;
+      
+      // Log the form submission
+      console.log('Contact form submission:', {
+        from: `${formData.firstName} ${formData.lastName || ''}`,
+        email: formData.email,
+        phone: formData.phone || 'Not provided',
+        message: formData.message,
+        city: formData.cityName || 'Not specified',
+        state: formData.stateName || 'Not specified'
+      });
+      
+      // Send email using our email service
+      // If we don't have a SendGrid API key, it will simulate success and log the email
+      await sendContactFormEmail({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        cityName: formData.cityName,
+        stateName: formData.stateName
+      });
+      
+      // Return success response
+      res.status(200).json({ 
+        message: 'Contact form submitted successfully',
+        success: true
+      });
+    } catch (error) {
+      console.error('Error processing contact form:', error);
+      res.status(500).json({ message: 'Failed to process contact form submission' });
     }
   });
 
