@@ -4,7 +4,7 @@ import { City } from "@shared/types";
 import SearchBar from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Sun, Building, Star, MessageSquare } from "lucide-react";
+import { Sun, Building, Star, MessageSquare, MapPin, Utensils, Heart } from "lucide-react";
 
 const Home = () => {
   const { data: cities, isLoading } = useQuery<City[]>({
@@ -153,10 +153,11 @@ const Home = () => {
               <p className="text-lg text-gray-600 mb-6">
                 Choosing a senior living facility is an important decision that affects quality of life. Our directory helps you:
               </p>
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
+                      <MapPin className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="ml-4">
@@ -166,7 +167,8 @@ const Home = () => {
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
+                      <Utensils className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="ml-4">
@@ -176,7 +178,8 @@ const Home = () => {
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white">
+                      <Heart className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="ml-4">
