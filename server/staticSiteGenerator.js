@@ -336,8 +336,8 @@ const htmlTemplates = {
     <div class="container">
       <div class="row text-center mb-5">
         <div class="col-12">
-          <h2 class="section-title">Why Choose Radiant Retirement?</h2>
-          <p class="section-subtitle">We help seniors and their families find the perfect retirement community with comprehensive information and tools.</p>
+          <h2 class="section-title">Feel Confident. Feel Supported. Feel at Home.</h2>
+          <p class="section-subtitle">We understand this is more than a move—it's a life transition. We're here to make it feel right.</p>
         </div>
       </div>
       <div class="row">
@@ -348,30 +348,30 @@ const htmlTemplates = {
                 <i class="fas fa-hand-holding-heart fa-2x"></i>
               </div>
             </div>
-            <h3 class="feature-title">Comprehensive Directory</h3>
-            <p>Browse detailed listings of senior living facilities in over 1,000 U.S. cities with photos, amenities, and contact information.</p>
+            <h3 class="feature-title">A Kinder Way to Search</h3>
+            <p>No pressure, no confusion—just thoughtful help every step of the way.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
               <div class="d-inline-flex align-items-center justify-content-center bg-secondary text-white rounded" style="width: 70px; height: 70px;">
-                <i class="fas fa-star fa-2x"></i>
+                <i class="fas fa-clock fa-2x"></i>
               </div>
             </div>
-            <h3 class="feature-title">Verified Reviews</h3>
-            <p>Read honest feedback from residents and families to make informed decisions about senior living communities.</p>
+            <h3 class="feature-title">Here When You Need Us</h3>
+            <p>Whether you're just beginning or feeling stuck, we're a steady hand to guide you forward.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
               <div class="d-inline-flex align-items-center justify-content-center bg-accent text-white rounded" style="width: 70px; height: 70px;">
-                <i class="fas fa-hands-helping fa-2x"></i>
+                <i class="fas fa-users fa-2x"></i>
               </div>
             </div>
-            <h3 class="feature-title">Expert Resources</h3>
-            <p>Access guides and advice about senior living options, financing, and care planning to simplify your search.</p>
+            <h3 class="feature-title">We Put People First</h3>
+            <p>Because it's not just about finding a place—it's about protecting dignity, safety, and joy.</p>
           </div>
         </div>
       </div>
