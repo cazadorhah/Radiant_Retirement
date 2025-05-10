@@ -345,7 +345,7 @@ const htmlTemplates = {
           <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
               <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded" style="width: 70px; height: 70px;">
-                <i class="fas fa-building fa-2x"></i>
+                <i class="fas fa-hand-holding-heart fa-2x"></i>
               </div>
             </div>
             <h3 class="feature-title">Comprehensive Directory</h3>

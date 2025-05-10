@@ -39,7 +39,7 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-muted p-6 rounded-lg text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Building className="h-8 w-8 text-primary" />
+                <HandHeart className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">A Kinder Way to Search</h3>
               <p className="text-gray-700">
@@ -48,7 +48,7 @@ const Home = () => {
             </div>
             <div className="bg-muted p-6 rounded-lg text-center">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="h-8 w-8 text-secondary" />
+                <Clock className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Here When You Need Us</h3>
               <p className="text-gray-700">
@@ -57,7 +57,7 @@ const Home = () => {
             </div>
             <div className="bg-muted p-6 rounded-lg text-center">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageSquare className="h-8 w-8 text-accent" />
+                <Users className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-xl font-semibold mb-2">We Put People First</h3>
               <p className="text-gray-700">
