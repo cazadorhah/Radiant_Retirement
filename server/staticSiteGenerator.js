@@ -386,7 +386,7 @@ const htmlTemplates = {
           <div class="info-items">
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                 </div>
               </div>
               <div>
@@ -397,7 +397,7 @@ const htmlTemplates = {
             
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                 </div>
               </div>
               <div>
@@ -408,7 +408,7 @@ const htmlTemplates = {
             
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                 </div>
               </div>
               <div>
@@ -420,7 +420,7 @@ const htmlTemplates = {
             <div class="additional-considerations mt-4 pt-4 border-top">
               <div class="info-item d-flex mb-4">
                 <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                     <i class="fas fa-map-marked-alt fa-lg text-white"></i>
                   </div>
                 </div>
@@ -432,7 +432,7 @@ const htmlTemplates = {
               
               <div class="info-item d-flex mb-4">
                 <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                     <i class="fas fa-concierge-bell fa-lg text-white"></i>
                   </div>
                 </div>
@@ -444,7 +444,7 @@ const htmlTemplates = {
               
               <div class="info-item d-flex mb-4">
                 <div class="icon-container me-3">
-                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #4361ee !important;">
+                  <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
                     <i class="fas fa-hand-holding-heart fa-lg text-white"></i>
                   </div>
                 </div>
