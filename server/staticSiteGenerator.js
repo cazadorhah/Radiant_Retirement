@@ -345,33 +345,6 @@ const htmlTemplates = {
       </div>
     </div>
   </div>
-  `;
-      <div class="facility-rating mb-2">
-        ${generateStars(facility.rating)}
-        <span class="text-muted ms-2">(${facility.reviewCount} reviews)</span>
-      </div>
-      <p class="facility-address mb-2 small">
-        <i class="fas fa-map-marker-alt text-primary me-1"></i> ${facility.address}
-      </p>
-      <p class="facility-phone mb-2 small">
-        <i class="fas fa-phone text-primary me-1"></i> ${facility.phone}
-      </p>
-      <div class="facility-amenities mb-3">
-        <p class="mb-1 small fw-bold">Care Types:</p>
-        <div class="d-flex flex-wrap gap-1">
-          ${facility.amenities.map((amenity) => 
-            `<span class="badge bg-accent-light text-accent small">${amenity}</span>`
-          ).join('')}
-        </div>
-      </div>
-    </div>
-    <div class="card-footer bg-white border-top-0 pt-0">
-      <div class="d-flex justify-content-between">
-        <a href="${facility.website}" class="btn btn-outline-primary btn-sm" target="_blank">Visit Website</a>
-        <a href="/facility/${facility.id}.html" class="btn btn-primary btn-sm">View Details</a>
-      </div>
-    </div>
-  </div>
   `,
 
   homepage: (popularCities) => `
