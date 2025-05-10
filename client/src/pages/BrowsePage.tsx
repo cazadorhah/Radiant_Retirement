@@ -205,7 +205,12 @@ const BrowsePage = () => {
                                 </div>
                                 <div className="flex items-center">
                                   <Star className="h-4 w-4 text-accent mr-1" />
-                                  <span>{(3.7 + (city.id % 15) / 10).toFixed(1)} Rating</span>
+                                  <span>
+                                    {city.name === "New York" && city.state === "NY" ? "4.4" : 
+                                    city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
+                                    city.name === "Chicago" && city.state === "IL" ? "4.1" : 
+                                    (3.7 + (city.id % 15) / 10).toFixed(1)} Rating
+                                  </span>
                                 </div>
                               </div>
                             </CardContent>
