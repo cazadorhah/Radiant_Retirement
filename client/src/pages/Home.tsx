@@ -6,16 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Building, Star, MessageSquare, MapPin, Utensils, Heart, HandHeart, Clock, Users } from "lucide-react";
 
-// City images mapping
-const cityImages: Record<string, string> = {
-  "New York-NY": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-  "Los Angeles-CA": "https://images.unsplash.com/photo-1580655653885-65763b2597d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-  "Chicago-IL": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-  "Houston-TX": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-  "Phoenix-AZ": "https://images.unsplash.com/photo-1558525815-1e33956ba910?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-  "Philadelphia-PA": "https://images.unsplash.com/photo-1563057854-e862821a1e18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
-};
-
 const Home = () => {
   const { data: cities, isLoading } = useQuery<City[]>({
     queryKey: ["/api/cities"],
@@ -92,18 +82,12 @@ const Home = () => {
           {isLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-white rounded-lg shadow overflow-hidden">
-                  <Skeleton className="h-48 w-full" />
-                  <div className="p-6">
-                    <Skeleton className="h-8 w-3/4 mb-2" />
-                    <Skeleton className="h-4 w-1/2 mb-4" />
-                    <Skeleton className="h-4 w-full mb-2" />
-                    <Skeleton className="h-4 w-3/4 mb-4" />
-                    <div className="flex gap-4">
-                      <Skeleton className="h-5 w-24" />
-                      <Skeleton className="h-5 w-24" />
-                    </div>
-                  </div>
+                <div key={i} className="bg-white rounded-lg shadow p-6">
+                  <Skeleton className="h-8 w-3/4 mb-2" />
+                  <Skeleton className="h-4 w-1/2 mb-4" />
+                  <Skeleton className="h-4 w-full mb-2" />
+                  <Skeleton className="h-4 w-full mb-2" />
+                  <Skeleton className="h-4 w-3/4" />
                 </div>
               ))}
             </div>
@@ -114,39 +98,30 @@ const Home = () => {
                   key={`${city.name}-${city.state}`}
                   href={`/city/${encodeURIComponent(`${city.name}-${city.state}`)}`}
                 >
-                  <div className="bg-white rounded-lg shadow hover:shadow-lg transition cursor-pointer border border-muted/50 overflow-hidden">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={cityImages[`${city.name}-${city.state}`] || `https://source.unsplash.com/600x400/?${city.name.toLowerCase().replace(/\s+/g, '-')},city`} 
-                        alt={`${city.name}, ${city.state}`}
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900">{city.name}, {city.state}</h3>
-                      <p className="text-gray-600 mb-4">Population: {city.population.toLocaleString()}</p>
-                      <p className="text-gray-700">
-                        Explore senior living options in {city.name}, {city.state}.
-                      </p>
-                      <div className="flex gap-4 mt-4 text-sm">
-                        <div className="flex items-center">
-                          <div className="w-5 h-5 bg-primary rounded-sm flex items-center justify-center mr-1.5">
-                            <Building className="h-3 w-3 text-white" />
-                          </div>
-                          <span>5+ Facilities</span>
+                  <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition cursor-pointer border border-muted/50">
+                    <h3 className="text-xl font-bold text-gray-900">{city.name}, {city.state}</h3>
+                    <p className="text-gray-600 mb-4">Population: {city.population.toLocaleString()}</p>
+                    <p className="text-gray-700">
+                      Explore senior living options in {city.name}, {city.state}.
+                    </p>
+                    <div className="flex gap-4 mt-4 text-sm">
+                      <div className="flex items-center">
+                        <div className="w-5 h-5 bg-primary rounded-sm flex items-center justify-center mr-1.5">
+                          <Building className="h-3 w-3 text-white" />
                         </div>
-                        <div className="flex items-center">
-                          <div className="w-5 h-5 bg-accent rounded-sm flex items-center justify-center mr-1.5">
-                            <Star className="h-3 w-3 text-white" />
-                          </div>
-                          <span>
-                            {city.name === "New York" && city.state === "NY" ? "4.4" : 
-                            city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
-                            city.name === "Chicago" && city.state === "IL" ? "4.1" : 
-                            city.name === "Philadelphia" && city.state === "PA" ? "4.2" : 
-                            (3.8 + (city.id % 13) / 10).toFixed(1)} Avg Rating
-                          </span>
+                        <span>5+ Facilities</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-5 h-5 bg-accent rounded-sm flex items-center justify-center mr-1.5">
+                          <Star className="h-3 w-3 text-white" />
                         </div>
+                        <span>
+                          {city.name === "New York" && city.state === "NY" ? "4.4" : 
+                          city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
+                          city.name === "Chicago" && city.state === "IL" ? "4.1" : 
+                          city.name === "Philadelphia" && city.state === "PA" ? "4.2" : 
+                          (3.8 + (city.id % 13) / 10).toFixed(1)} Avg Rating
+                        </span>
                       </div>
                     </div>
                   </div>

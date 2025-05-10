@@ -450,31 +450,17 @@ const htmlTemplates = {
       <div class="row">
         ${popularCities.map(city => `
         <div class="col-md-4 mb-4">
-          <div class="city-card card h-100 shadow-sm overflow-hidden">
-            <div class="position-relative overflow-hidden" style="height: 200px;">
-              <img 
-                src="${getCityImage(city.name, city.state)}" 
-                alt="${city.name}, ${city.state}" 
-                class="card-img-top w-100 h-100 object-fit-cover"
-                loading="lazy"
-              >
-            </div>
+          <div class="city-card card h-100 shadow-sm">
             <div class="card-body">
               <h3 class="card-title h5">${city.name}, ${city.state}</h3>
               <p class="text-muted mb-2">Population: ${city.population.toLocaleString()}</p>
               <p class="mb-3">Explore senior living options in ${city.name}, ${city.state}.</p>
               <div class="d-flex gap-3 small text-muted mb-3">
                 <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-building fa-xs"></i>
-                  </div>
-                  5+ Facilities
+                  <i class="fas fa-building me-1"></i> 5+ Facilities
                 </div>
                 <div>
-                  <div class="d-inline-flex align-items-center justify-content-center bg-accent rounded-1 text-white me-1" style="width: 18px; height: 18px;">
-                    <i class="fas fa-star fa-xs"></i>
-                  </div>
-                  ${
+                  <i class="fas fa-star me-1"></i> ${
                     city.name === "New York" && city.state === "NY" ? "4.4" : 
                     city.name === "Los Angeles" && city.state === "CA" ? "4.2" : 
                     city.name === "Chicago" && city.state === "IL" ? "4.1" : 
@@ -483,7 +469,7 @@ const htmlTemplates = {
                   } Avg Rating
                 </div>
               </div>
-              <a href="/city/${city.slug}.html" class="btn btn-outline-primary">View Facilities</a>
+              <a href="/city/${city.slug}.html" class="btn btn-outline-primary stretched-link">View Facilities</a>
             </div>
           </div>
         </div>
