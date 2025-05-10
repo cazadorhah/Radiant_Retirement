@@ -70,7 +70,7 @@ const CityPage = () => {
                 <div className="text-primary text-4xl mb-2">
                   <Building className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900">{facilities?.length || 0}</h3>
+                <h3 className="text-lg font-medium text-gray-900">5+</h3>
                 <p className="text-sm text-gray-500">Available Facilities</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-4 flex flex-col items-center">
