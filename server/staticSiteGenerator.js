@@ -642,19 +642,46 @@ const htmlTemplates = {
     </div>
   </section>
 
-  <!-- Map Section -->
-  <section class="map-section py-4 bg-light">
+  <!-- Overview Section -->
+  <section class="overview-section py-4 bg-light">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="map-container p-3 bg-white rounded shadow">
-            <h2 class="h4 mb-3">Senior Living Facilities in ${city.name}, ${city.state}</h2>
-            <div id="facilities-map" class="city-map" style="height: 400px; background-color: #f0f0f0;">
-              <!-- Map will be initialized with JavaScript -->
-              <div class="d-flex justify-content-center align-items-center h-100">
-                <p>Map loading... (This would be an interactive map with JavaScript)</p>
+          <div class="overview-container p-4 bg-white rounded shadow">
+            <h2 class="h4 mb-3">Senior Living Overview in ${city.name}, ${city.state}</h2>
+            
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="overview-card h-100 p-3 border rounded bg-primary-light">
+                  <h3 class="h5 mb-3 text-primary">
+                    <i class="fas fa-building me-2"></i>Facility Types
+                  </h3>
+                  <ul class="fa-ul mb-0">
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Independent Living Communities</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Assisted Living Facilities</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Memory Care Units</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Skilled Nursing Facilities</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Continuing Care Retirement Communities</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 mt-3 mt-md-0">
+                <div class="overview-card h-100 p-3 border rounded bg-accent-light">
+                  <h3 class="h5 mb-3 text-accent">
+                    <i class="fas fa-star me-2"></i>Common Amenities
+                  </h3>
+                  <ul class="fa-ul mb-0">
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Daily Meal Service</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Transportation Services</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Fitness and Wellness Programs</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Social Activities and Events</li>
+                    <li><span class="fa-li"><i class="fas fa-check-circle text-success"></i></span>Housekeeping and Maintenance</li>
+                  </ul>
+                </div>
               </div>
             </div>
+            
+            <p class="mb-0">Below you'll find ${facilities.length} senior living options in ${city.name}. Contact each facility directly for current rates, availability, and to schedule a tour.</p>
           </div>
         </div>
       </div>
@@ -718,17 +745,28 @@ const htmlTemplates = {
   <!-- Related Cities Section -->
   <section class="related-cities py-5">
     <div class="container">
-      <h2 class="section-title mb-4">Nearby Cities in ${city.stateName || city.state}</h2>
+      <h2 class="section-title mb-4">More Cities in ${city.stateName || city.state}</h2>
       <div class="row">
-        <!-- This section would show nearby cities based on location -->
         <div class="col-12">
           <p>Explore senior living options in other cities in ${city.stateName || city.state}:</p>
-          <div class="d-flex flex-wrap gap-2 mt-3">
-            <a href="#" class="btn btn-outline-secondary btn-sm">Nearby City 1</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">Nearby City 2</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">Nearby City 3</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">Nearby City 4</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">Nearby City 5</a>
+          
+          <div class="related-cities-grid mt-3">
+            ${/* Show a message to browse all cities if we don't have other cities to show */}
+            ${`<a href="/browse/${city.state.toLowerCase()}.html" class="btn btn-primary mt-3">
+              <i class="fas fa-list me-2"></i>View All ${city.stateName || city.state} Cities
+            </a>`}
+          </div>
+          
+          <div class="browse-more mt-4">
+            <div class="card border-0 bg-light">
+              <div class="card-body">
+                <h3 class="h5 mb-3">Find Senior Living Near You</h3>
+                <p>Looking for senior living options in a different area? Use our state browser to find cities across the country.</p>
+                <a href="/browse/index.html" class="btn btn-outline-primary">
+                  <i class="fas fa-search me-2"></i>Browse by State
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
