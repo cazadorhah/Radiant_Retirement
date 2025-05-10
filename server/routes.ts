@@ -8,6 +8,7 @@ import { createReadStream } from 'fs';
 import { generateFacilities } from './facilityGenerator';
 import { processAndSaveCitiesData, getStateAbbreviation } from './cityGenerator';
 import { City, InsertCity } from "@shared/schema";
+import { z } from "zod";
 
 // State abbreviation mapping
 const stateAbbreviations: Record<string, string> = {
