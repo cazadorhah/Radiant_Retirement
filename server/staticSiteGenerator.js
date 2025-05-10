@@ -1656,7 +1656,10 @@ function generateFacilities(cityName, stateName) {
   }
 
   function generatePhoneNumber() {
-    return faker.phone.number('(###) ###-####');
+    const areaCode = Math.floor(Math.random() * 900) + 100;
+    const prefix = Math.floor(Math.random() * 900) + 100;
+    const lineNumber = Math.floor(Math.random() * 9000) + 1000;
+    return `(${areaCode}) ${prefix}-${lineNumber}`;
   }
 
   function generateWebsite(facilityName, city) {
@@ -1692,6 +1695,7 @@ function generateFacilities(cityName, stateName) {
   // Create 5 facilities for the city
   for (let i = 0; i < 5; i++) {
     const name = generateFacilityName();
+    const facilityType = generateFacilityType();
     const facility = {
       id: `${cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${stateName.toLowerCase()}-${i+1}`,
       name,
@@ -1703,7 +1707,7 @@ function generateFacilities(cityName, stateName) {
       rating: generateRating(),
       reviewCount: generateReviewCount(),
       amenities: generateRandomAmenities(),
-      facilityType: generateFacilityType()
+      facilityType
     };
     
     facilities.push(facility);
