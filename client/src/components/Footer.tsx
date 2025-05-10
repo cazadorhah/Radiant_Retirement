@@ -1,5 +1,14 @@
 import { Link } from "wouter";
-import { Sun, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Sun,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,79 +21,105 @@ const Footer = () => {
               <span className="text-xl font-bold">Radiant Retirement</span>
             </div>
             <p className="mt-4 text-gray-300">
-              Helping seniors find the perfect retirement home across the United States.
+              Helping seniors find the perfect retirement home across the United
+              States.
             </p>
-            <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-white">Senior Living Guide</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Financial Assistance</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Healthcare Resources</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Retirement Planning</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Caregiver Support</Link></li>
-            </ul>
-          </div>
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Popular Cities</h3>
             <ul className="space-y-2">
-              <li><Link href="/city/New%20York-NY" className="text-gray-300 hover:text-white">New York, NY</Link></li>
-              <li><Link href="/city/Los%20Angeles-CA" className="text-gray-300 hover:text-white">Los Angeles, CA</Link></li>
-              <li><Link href="/city/Chicago-IL" className="text-gray-300 hover:text-white">Chicago, IL</Link></li>
-              <li><Link href="/city/Houston-TX" className="text-gray-300 hover:text-white">Houston, TX</Link></li>
-              <li><Link href="/city/Phoenix-AZ" className="text-gray-300 hover:text-white">Phoenix, AZ</Link></li>
+              <li>
+                <Link
+                  href="/city/New%20York-NY"
+                  className="text-gray-300 hover:text-white"
+                >
+                  New York, NY
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/city/Los%20Angeles-CA"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Los Angeles, CA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/city/Chicago-IL"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Chicago, IL
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/city/Houston-TX"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Houston, TX
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/city/Phoenix-AZ"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Phoenix, AZ
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Browse States</h3>
             <ul className="space-y-2">
-              <li><Link href="/browse/CA" className="text-gray-300 hover:text-white">California</Link></li>
-              <li><Link href="/browse/FL" className="text-gray-300 hover:text-white">Florida</Link></li>
-              <li><Link href="/browse/TX" className="text-gray-300 hover:text-white">Texas</Link></li>
-              <li><Link href="/browse/NY" className="text-gray-300 hover:text-white">New York</Link></li>
-              <li><Link href="/browse" className="text-gray-300 hover:text-white">All States</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <Mail className="h-5 w-5 mt-1 mr-2 text-gray-400" />
-                <span>info@radiantretirement.com</span>
+              <li>
+                <Link
+                  href="/browse/CA"
+                  className="text-gray-300 hover:text-white"
+                >
+                  California
+                </Link>
               </li>
-              <li className="flex items-start">
-                <Phone className="h-5 w-5 mt-1 mr-2 text-gray-400" />
-                <span>(800) 555-1234</span>
+              <li>
+                <Link
+                  href="/browse/FL"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Florida
+                </Link>
               </li>
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 mt-1 mr-2 text-gray-400" />
-                <span>123 Retirement Lane<br />Seattle, WA 98101</span>
+              <li>
+                <Link
+                  href="/browse/TX"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Texas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/browse/NY"
+                  className="text-gray-300 hover:text-white"
+                >
+                  New York
+                </Link>
+              </li>
+              <li>
+                <Link href="/browse" className="text-gray-300 hover:text-white">
+                  All States
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">&copy; {new Date().getFullYear()} Radiant Retirement. All rights reserved.</p>
-            <div className="mt-4 md:mt-0 flex space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-white">Privacy Policy</Link>
-              <Link href="#" className="text-gray-400 hover:text-white">Terms of Service</Link>
-              <Link href="#" className="text-gray-400 hover:text-white">Accessibility</Link>
-            </div>
+            <p className="text-gray-400">
+              &copy; {new Date().getFullYear()} Radiant Retirement. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </div>

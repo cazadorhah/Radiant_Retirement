@@ -4,6 +4,7 @@ import CityPage from "@/pages/CityPage";
 import BrowsePage from "@/pages/BrowsePage";
 import ResourcesPage from "@/pages/ResourcesPage";
 import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
