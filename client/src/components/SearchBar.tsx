@@ -54,9 +54,9 @@ const SearchBar = () => {
             Find senior living options in over 1,000 U.S. cities
           </p>
           <div className="relative" ref={searchRef}>
-            <div className="flex items-center bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="flex items-center bg-white rounded-lg shadow-md overflow-hidden border border-muted/30">
               <div className="px-3 py-2">
-                <Search className="h-5 w-5 text-gray-500" />
+                <Search className="h-5 w-5 text-secondary" />
               </div>
               <input
                 type="text"
@@ -71,13 +71,13 @@ const SearchBar = () => {
               </button>
             </div>
             {showResults && (
-              <div className="absolute w-full bg-white mt-1 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto border border-gray-200">
+              <div className="absolute w-full bg-white mt-1 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto border border-muted/50">
                 <div className="p-2">
                   {filteredCities.length > 0 ? (
                     filteredCities.map((city) => (
                       <div
                         key={`${city.name}-${city.state}`}
-                        className="cursor-pointer p-2 hover:bg-amber-50 hover:text-amber-700 rounded transition-colors"
+                        className="cursor-pointer p-2 hover:bg-accent/10 hover:text-accent rounded transition-colors"
                         onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
                       >
                         <div className="flex justify-between">

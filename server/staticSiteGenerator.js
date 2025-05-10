@@ -282,7 +282,7 @@ const htmlTemplates = {
 
   facilityCard: (facility) => `
   <!-- Facility Card Component -->
-  <div class="facility-card card h-100 shadow-sm">
+  <div class="facility-card card h-100 shadow-sm border border-muted">
     <img src="${facility.imageUrl}" class="card-img-top" alt="${facility.name}" loading="lazy">
     <div class="card-body">
       <h3 class="card-title h5">${facility.name}</h3>
@@ -300,7 +300,7 @@ const htmlTemplates = {
         <p class="mb-1 small fw-bold">Care Types:</p>
         <div class="d-flex flex-wrap gap-1">
           ${facility.amenities.map((amenity) => 
-            `<span class="badge bg-secondary-light text-secondary small">${amenity}</span>`
+            `<span class="badge bg-accent-light text-accent small">${amenity}</span>`
           ).join('')}
         </div>
       </div>
