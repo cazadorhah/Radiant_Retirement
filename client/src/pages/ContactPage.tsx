@@ -40,14 +40,14 @@ const ContactPage = () => {
         />
       </Helmet>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+      <div className="container center mx-auto px-12 py-12">
+        <div className="max-w-4xl center mx-auto">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-[#2B6777] mb-4">Contact Us</h1>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex justify-center">
+            <div className="bg-white rounded-lg shadow-md p-6 max-w-xl w-full">
               <h2 className="text-2xl font-bold text-[#2B6777] mb-6">
                 Have Questions About Senior Living?
               </h2>

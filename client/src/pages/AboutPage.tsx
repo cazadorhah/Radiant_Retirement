@@ -28,11 +28,11 @@ const AboutPage = () => {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-10">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/2">
+            <div className="md:w-">
               <h2 className="text-2xl font-bold text-[#2B6777] mb-4 pb-2 border-b-2 border-[#C8D8E4]">
                 Our Story
               </h2>
-              <p className="mb-4">
+              <p className="text-gray-600">
                 Radiant Retirement was created out of a deep personal need: the
                 need for clarity, compassion, and trustworthy guidance during
                 one of life’s most challenging transitions—navigating aging and
@@ -42,19 +42,21 @@ const AboutPage = () => {
                 planning for aging loved ones. The information was scattered,
                 confusing, and often full of jargon.
               </p>
-              <p className="mb-4">Radiant Retirement exists to change that.</p>
-              <p className="mb-4">
+              <br></br>
+              <p className="text-gray-600"> <b>Radiant Retirement exists to change that</b>.</p>
+              <br></br>
+              <p className="text-gray-600">
                 The goal is simple: to make vital information about senior care
                 accessible and easy to understand. Whether you’re exploring
                 retirement communities, applying for Medicare or Medicaid, or
                 caring for a parent with memory loss, Radiant Retirement is here
                 to support and inform you every step of the way.
-              </p>
-              <p className="mb-4">
+
                 Aging can be difficult—but finding help shouldn’t be. Radiant
                 Retirement empowers families with clear, reliable resources so
                 they can make confident decisions for the people they love.
               </p>
+              <br></br>
               <p className="italic text-[#52AB98] font-medium">
                 "We believe every senior deserves to age with dignity in a
                 community that truly feels like home."
