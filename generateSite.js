@@ -1,4 +1,4 @@
-const { generateStaticSite } = import('./server/staticSiteGenerator');
+const { generateStaticSite } = import ('./server/staticSiteGenerator');
 
 // Run the generator
 generateStaticSite()
