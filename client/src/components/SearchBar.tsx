@@ -71,23 +71,23 @@ const SearchBar = () => {
               </button>
             </div>
             {showResults && (
-              <div className="absolute w-full bg-white mt-1 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+              <div className="absolute w-full bg-white mt-1 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto border border-gray-200">
                 <div className="p-2">
                   {filteredCities.length > 0 ? (
                     filteredCities.map((city) => (
                       <div
                         key={`${city.name}-${city.state}`}
-                        className="cursor-pointer p-2 hover:bg-gray-100 rounded"
+                        className="cursor-pointer p-2 hover:bg-blue-50 hover:text-blue-700 rounded transition-colors"
                         onClick={() => handleCitySelect(`${city.name}-${city.state}`)}
                       >
                         <div className="flex justify-between">
-                          <span>{city.name}, {city.state}</span>
-                          {city.stateName && <span className="text-gray-500 text-sm">{city.stateName}</span>}
+                          <span className="text-gray-800 font-medium">{city.name}, {city.state}</span>
+                          {city.stateName && <span className="text-gray-600 text-sm">{city.stateName}</span>}
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="p-2 text-gray-500">No cities found</div>
+                    <div className="p-2 text-gray-700 font-medium">No cities found</div>
                   )}
                 </div>
               </div>
