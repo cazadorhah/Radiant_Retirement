@@ -190,11 +190,44 @@ const CityPage = () => {
               </div>
             </div>
             <div className="mt-10 lg:mt-0">
-              <img 
-                src={`https://source.unsplash.com/800x600/?${name.toLowerCase()},city`} 
-                alt={`${name}, ${state} skyline or landmark`} 
-                className="rounded-lg shadow-lg"
-              />
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-medium text-gray-900 mb-4">Senior Living Resources in {name}</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="text-base font-medium text-gray-900">Senior Community Centers</h4>
+                      <p className="mt-1 text-sm text-gray-500">Local community centers offering social activities, meals, and wellness programs.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="text-base font-medium text-gray-900">Elder Services</h4>
+                      <p className="mt-1 text-sm text-gray-500">Organizations providing support with healthcare coordination, transportation, and home care.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="text-base font-medium text-gray-900">Medicare Counseling</h4>
+                      <p className="mt-1 text-sm text-gray-500">Free counseling services to help navigate Medicare benefits and coverage options.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
