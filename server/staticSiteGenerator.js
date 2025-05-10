@@ -342,27 +342,33 @@ const htmlTemplates = {
       </div>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="feature-card text-center p-4 h-100">
+          <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
-              <i class="fas fa-search fa-3x text-primary"></i>
+              <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded" style="width: 70px; height: 70px;">
+                <i class="fas fa-building fa-2x"></i>
+              </div>
             </div>
             <h3 class="feature-title">Comprehensive Directory</h3>
             <p>Browse detailed listings of senior living facilities in over 1,000 U.S. cities with photos, amenities, and contact information.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="feature-card text-center p-4 h-100">
+          <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
-              <i class="fas fa-star fa-3x text-primary"></i>
+              <div class="d-inline-flex align-items-center justify-content-center bg-secondary text-white rounded" style="width: 70px; height: 70px;">
+                <i class="fas fa-star fa-2x"></i>
+              </div>
             </div>
             <h3 class="feature-title">Verified Reviews</h3>
             <p>Read honest feedback from residents and families to make informed decisions about senior living communities.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="feature-card text-center p-4 h-100">
+          <div class="feature-card text-center p-4 h-100 shadow-sm border border-muted">
             <div class="icon-container mb-3">
-              <i class="fas fa-hands-helping fa-3x text-primary"></i>
+              <div class="d-inline-flex align-items-center justify-content-center bg-accent text-white rounded" style="width: 70px; height: 70px;">
+                <i class="fas fa-hands-helping fa-2x"></i>
+              </div>
             </div>
             <h3 class="feature-title">Expert Resources</h3>
             <p>Access guides and advice about senior living options, financing, and care planning to simplify your search.</p>
@@ -386,12 +392,13 @@ const htmlTemplates = {
           <div class="info-items">
             <div class="info-item d-flex mb-4">
               <div class="icon-container me-3">
-                <div class="d-flex align-items-center justify-content-center rounded bg-primary" style="width: 48px; height: 48px; background-color: #2C4BFF !important;">
+                <div class="d-flex align-items-center justify-content-center rounded bg-primary text-white" style="width: 48px; height: 48px;">
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
               </div>
               <div>
-                <h3 class="h5 mb-2">Compare Options</h3>
-                <p class="mb-0">Review facilities side-by-side to find the best match for your needs.</p>
+                <h3 class="h5 mb-2">Location Benefits</h3>
+                <p class="mb-0">Learn about the facility's neighborhood, nearby hospitals, parks, and overall convenience for families.</p>
               </div>
             </div>
             
