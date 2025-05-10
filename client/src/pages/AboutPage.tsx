@@ -263,7 +263,7 @@ const AboutPage = () => {
                   One of our senior living advisors will contact you within 24 hours.
                 </p>
                 <p className="text-sm text-gray-500">
-                  If you need immediate assistance, please call us at <a href="tel:1-800-555-0000" className="text-[#52AB98] font-bold hover:underline">1-800-555-0000</a>
+                  We appreciate your interest in Radiant Retirement.
                 </p>
               </div>
             ) : (
@@ -348,11 +348,7 @@ const AboutPage = () => {
               </form>
             )}
             
-            <div className="mt-4 text-center">
-              <p className="text-sm text-gray-600">
-                Prefer to call? Reach us at <a href="tel:1-800-555-0000" className="text-[#52AB98] font-bold hover:underline">1-800-555-0000</a>
-              </p>
-            </div>
+
           </div>
         </div>
       </div>
