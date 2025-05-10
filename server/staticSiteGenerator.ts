@@ -498,7 +498,7 @@ const htmlTemplates = {
               <div class="stat-label">Population</div>
             </div>
             <div class="stat-item">
-              <div class="stat-value">${facilities.length}</div>
+              <div class="stat-value">5+</div>
               <div class="stat-label">Senior Living Facilities</div>
             </div>
             <div class="stat-item">
@@ -780,7 +780,7 @@ const htmlTemplates = {
               <div class="stat-label">Cities</div>
             </div>
             <div class="stat-item">
-              <div class="stat-value">${cities.length * 5}</div>
+              <div class="stat-value">${cities.length * 5}+</div>
               <div class="stat-label">Senior Living Facilities</div>
             </div>
           </div>
